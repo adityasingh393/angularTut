@@ -1,0 +1,41 @@
+<div class="main-container">
+  <form action="#">
+    <label name="email">Email</label>
+    <input
+      type="email"
+      placeholder="Enter your email"
+      [(ngModel)]="registerData.email"
+      name="email"
+    />
+
+    <label name="password">Password</label>
+    <input
+      type="password"
+      name="password"
+      placeholder="Enter your password"
+      [(ngModel)]="registerData.password"
+    />
+
+    <label name="name">UserName</label>
+    <input
+      type="text"
+      name="userName"
+      placeholder="Enter your username"
+      [(ngModel)]="registerData.userName"
+    />
+
+    <label name="phoneNumber">Phone Number</label>
+    <input
+      type="text"
+      name="phoneNumber"
+      placeholder="Enter your phone number"
+      [(ngModel)]="registerData.phoneNumber"
+    />
+
+    <label name="age">Age</label>
+
+    <input type="number" name="age" [(ngModel)]="registerData.age" />
+
+    <button type="button" class="btn" (click)="onRegister()">Register</button>
+  </form>
+</div>

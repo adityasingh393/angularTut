@@ -1,0 +1,20 @@
+<div class="main-container">
+  <form action="#">
+    <label name="email">Email</label>
+    <input
+      type="email"
+      placeholder="Enter your email"
+      [(ngModel)]="loginData.email"
+      name="email"
+    />
+    <label name="password">Password</label>
+    <input
+      type="password"
+      placeholder="Enter your password"
+      [(ngModel)]="loginData.password"
+      name="password"
+    />
+
+    <button type="button" class="btn" (click)="onLogin()">Login</button>
+  </form>
+</div>
