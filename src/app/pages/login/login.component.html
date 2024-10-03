@@ -14,7 +14,20 @@
       [(ngModel)]="loginData.password"
       name="password"
     />
-
+    <!-- <app-input-field
+      [label]="'email'"
+      type="email"
+      [value]="loginData.email"
+    ></app-input-field>
+    <app-input-field
+      [label]="'password'"
+      type="password"
+      [value]="loginData.password"
+    ></app-input-field> -->
     <button type="button" class="btn" (click)="onLogin()">Login</button>
   </form>
+  <div class="subContainer">
+    <p>If not register kindly first register then login</p><button type="button" class="btn" (click)="onClickRegister()">Register</button>
+  </div>
+
 </div>

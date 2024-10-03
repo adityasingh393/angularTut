@@ -27,6 +27,11 @@ export class RegisterComponent {
       .post('http://localhost:4000/auth/register', this.registerData)
       .subscribe((res: any) => {
         if (!res.result) {
+          // console.log(res)
+          localStorage.setItem(
+            'userSessionToken',
+            res.authentication.sessionToken
+          );
           localStorage.setItem('userDetails', JSON.stringify(res));
           // localStorage.setItem('userEmail', this.registerData.email); //for api to fetch the userDetails
           alert('registration succesful');
@@ -35,5 +40,8 @@ export class RegisterComponent {
           alert(res.message);
         }
       });
+  }
+  onClickLogin() {
+    this.router.navigateByUrl('/login');
   }
 }

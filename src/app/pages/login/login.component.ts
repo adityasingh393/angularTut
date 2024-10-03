@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Login } from '../../interfaces/auth';
+import { StringInputComponent } from '../../component/input-field/input-field.component';
 // import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, StringInputComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -22,12 +23,20 @@ export class LoginComponent {
   }
   // debugger: any;
   onLogin() {
+    // console.log(this.loginData);
     this.http
       .post('http://localhost:4000/auth/login', this.loginData)
       .subscribe((res: any) => {
         console.log(res);
         if (!res.result) {
-          console.log('user data saved on logged in', res);
+          // console.log(
+          //   'user data saved on logged in',
+          //   res.authentication.sessionToken
+          // );
+          localStorage.setItem(
+            'userSessionToken',
+            res.authentication.sessionToken
+          );
           localStorage.setItem('userDetails', JSON.stringify(res));
           // localStorage.setItem('userEmail', this.loginData.email);
           console.log('login dine');
@@ -37,5 +46,8 @@ export class LoginComponent {
           alert(res.message);
         }
       });
+  }
+  onClickRegister() {
+    this.router.navigateByUrl('/register');
   }
 }

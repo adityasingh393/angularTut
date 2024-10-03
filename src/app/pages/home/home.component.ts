@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { UserInfo } from '../../interfaces/auth';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
   // constructor(private http: HttpClient) {}
+  constructor(private router: Router) {}
   userInfo: UserInfo = {
     email: '',
     phoneNumber: '',
@@ -25,16 +27,11 @@ export class HomeComponent {
     // if (email) {
     //   this.getUserDetails(email);
     // }
-     this.userInfo = JSON.parse(localStorage.getItem('userDetails') || '{}');
+    this.userInfo = JSON.parse(localStorage.getItem('userDetails') || '{}');
     console.log('userDetails', this.userInfo.age);
   }
-
-  // getUserDetails(email: string) {
-  //   this.http
-  //     .post<UserInfo>('http://localhost:4000/auth/userInfo', { email })
-  //     .subscribe((data) => {
-  //       console.log(data);
-  //       this.userInfo = data;
-  //     });
-  // }
+  onLogOut() {
+    this.router.navigateByUrl('/login');
+    localStorage.removeItem('userSessionToken');
+  }
 }
