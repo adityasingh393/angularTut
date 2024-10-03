@@ -27,7 +27,9 @@ export class LoginComponent {
       .subscribe((res: any) => {
         console.log(res);
         if (!res.result) {
-          localStorage.setItem('userEmail', this.loginData.email);
+          console.log('user data saved on logged in', res);
+          localStorage.setItem('userDetails', JSON.stringify(res));
+          // localStorage.setItem('userEmail', this.loginData.email);
           console.log('login dine');
           this.router.navigateByUrl('/home');
         } else {

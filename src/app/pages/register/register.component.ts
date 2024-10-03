@@ -27,7 +27,8 @@ export class RegisterComponent {
       .post('http://localhost:4000/auth/register', this.registerData)
       .subscribe((res: any) => {
         if (!res.result) {
-          localStorage.setItem('userEmail', this.registerData.email);
+          localStorage.setItem('userDetails', JSON.stringify(res));
+          // localStorage.setItem('userEmail', this.registerData.email); //for api to fetch the userDetails
           alert('registration succesful');
           this.router.navigateByUrl('/home');
         } else {
