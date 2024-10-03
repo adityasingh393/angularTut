@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Login } from '../../interfaces/auth';
 import { StringInputComponent } from '../../component/input-field/input-field.component';
+import { CommonModule } from '@angular/common';
 // import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, StringInputComponent],
+  imports: [FormsModule, StringInputComponent, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })

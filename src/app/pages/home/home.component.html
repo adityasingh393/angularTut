@@ -1,8 +1,12 @@
 <div class="main-container">
-  <h2>Welcome, {{ userInfo.userName }}!</h2> <button (click)="onLogOut()">lOGOUT</button>
+  <h2>Welcome, {{ userInfo.userName }}!</h2>
   <div class="user-details">
     <p>Email: {{ userInfo.email }}</p>
     <p>Phone Number: {{ userInfo.phoneNumber }}</p>
     <p>Age: {{ userInfo.age }}</p>
+  </div>
+  <div class="btn-container">
+    <button (click)="editdata()" class="btn">Edit details</button>
+    <button (click)="onLogOut()" class="btn">LOGOUT</button>
   </div>
 </div>

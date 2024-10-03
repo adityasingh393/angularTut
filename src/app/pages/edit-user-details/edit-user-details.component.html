@@ -1,0 +1,25 @@
+<div class="main-container">
+  <form action="#">
+    <label name="name">UserName</label>
+    <input
+      type="text"
+      name="userName"
+      placeholder="Enter your username"
+      [(ngModel)]="UserEditData.userName"
+    />
+
+    <label name="phoneNumber">Phone Number</label>
+    <input
+      type="text"
+      name="phoneNumber"
+      placeholder="Enter your phone number"
+      [(ngModel)]="UserEditData.phoneNumber"
+    />
+
+    <label name="age">Age</label>
+
+    <input type="number" name="age" [(ngModel)]="UserEditData.age" />
+
+    <button type="button" class="btn" (click)="onSave()">Save Chnages</button>
+  </form>
+</div>

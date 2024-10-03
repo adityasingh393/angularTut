@@ -11,9 +11,15 @@ export interface Login {
   password: string;
 }
 
-export interface UserInfo{
-    email:string;
-    userName:string;
-    phoneNumber:string;
-    age:number;
+export interface UserInfo {
+  email: string;
+  userName: string;
+  phoneNumber: string;
+  age: number;
+}
+
+export interface UserEditData {
+  userName: string;
+  phoneNumber: string;
+  age: number;
 }

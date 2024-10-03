@@ -34,4 +34,7 @@ export class HomeComponent {
     this.router.navigateByUrl('/login');
     localStorage.removeItem('userSessionToken');
   }
+  editdata() {
+    this.router.navigateByUrl('/edit-user-details');
+  }
 }
