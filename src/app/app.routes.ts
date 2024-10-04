@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { authGuard } from './guards/auth.guard';
 import { loginGuardGuard } from './guards/login-guard.guard';
 import { EditUserDetailsComponent } from './pages/edit-user-details/edit-user-details.component';
+import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
     path: 'edit-user-details',
     component: EditUserDetailsComponent,
     canActivate: [authGuard],
+  },
+  {
+    path:'upload-image',
+    component:FileUploadComponent,
   },
   {
     path: '',

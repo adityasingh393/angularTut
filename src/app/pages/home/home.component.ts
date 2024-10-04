@@ -37,4 +37,7 @@ export class HomeComponent {
   editdata() {
     this.router.navigateByUrl('/edit-user-details');
   }
+  onUploadClick() {
+    this.router.navigateByUrl('/upload-image');
+  }
 }

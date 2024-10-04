@@ -1,0 +1,12 @@
+<div class="main-container">
+  <input class="btn-secondary" type="file" (change)="onChange($event)" />
+
+  <button (click)="onUpload()" class="btn">Upload</button>
+  <div class="container" *ngIf="shortLink">
+    <h2>Visit Here</h2>
+    <a target="_blank" href="{{ shortLink }}">{{ shortLink }}</a>
+  </div>
+  <div class="container" *ngIf="loading">
+    <h3>Loading ...</h3>
+  </div>
+</div>
