@@ -1,0 +1,12 @@
+<div>
+  <h3 class="main-heading">All Users</h3>
+  <div class="main-container">
+    <div *ngFor="let user of allUsers" class="container">
+      <p>Email={{ user.email }}</p>
+      <p>UserName={{ user.userName }}</p>
+      <p>Age={{ user.age }}</p>
+      <p>Phone Number={{ user.phoneNumber }}</p>
+      <button class="btn" (click)="OnEditButtonClick(user)">Edit Details</button>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,7 @@
     <p>Age: {{ userInfo.age }}</p>
   </div>
   <div class="btn-container">
-    <button (click)="editdata()" class="btn">Edit details</button>
+    <button (click)="editdata(userInfo._id)" class="btn">Edit details</button>
     <button type="button" class="btn" (click)="onUploadClick()">
       Upload Image
     </button>

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UserEditData } from '../../interfaces/auth';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-edit-user-details',
@@ -12,7 +13,12 @@ import { Router } from '@angular/router';
 })
 export class EditUserDetailsComponent {
   UserEditData: UserEditData;
-  constructor(private router: Router) {
+  _id: string = '';
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private route: ActivatedRoute
+  ) {
     this.UserEditData = {
       userName: '',
       age: 0,
@@ -20,8 +26,23 @@ export class EditUserDetailsComponent {
     };
   }
   ngOnInit() {
-    this.UserEditData = JSON.parse(localStorage.getItem('userDetails') || '{}');
-    console.log(this.UserEditData);
+    const getID = async () => {
+      await this.route.params.subscribe((params) => {
+        this._id = params['id'];
+        console.log('Test ID:', this._id);
+      });
+    };
+    getID();
+    const getuserData = async (id: string) => {
+      console.log("insdie ge ",id)
+      await this.http
+        .post('http://localhost:4000/auth/getUserInfoById',{ id})
+        .subscribe((data: any) => {
+          console.log(data);
+          this.UserEditData = data;
+        });
+    };
+    getuserData(this._id);
   }
   onSave() {
     //  const changedAge= this.UserEditData.age;

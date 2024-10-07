@@ -15,6 +15,7 @@ export class HomeComponent {
   // constructor(private http: HttpClient) {}
   constructor(private router: Router) {}
   userInfo: UserInfo = {
+    _id:'',
     email: '',
     phoneNumber: '',
     age: 0,
@@ -34,8 +35,8 @@ export class HomeComponent {
     this.router.navigateByUrl('/login');
     localStorage.removeItem('userSessionToken');
   }
-  editdata() {
-    this.router.navigateByUrl('/edit-user-details');
+  editdata(id:string) {
+    this.router.navigateByUrl(`/edit-user-details/${id}`);
   }
   onUploadClick() {
     this.router.navigateByUrl('/upload-image');
