@@ -1,30 +1,43 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { AllUsers, User } from '../../interfaces/allUsers';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-all-users',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatTableModule, MatButtonModule, MatPaginatorModule],
   templateUrl: './all-users.component.html',
-  styleUrl: './all-users.component.css',
+  styleUrls: ['./all-users.component.css'],
 })
-export class AllUsersComponent {
+export class AllUsersComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) {}
 
   allUsers: User[] = [];
+  displayedColumns: string[] = [
+    'position',
+    'name',
+    'weight',
+    'symbol',
+    'actions',
+  ];
+
   ngOnInit() {
     this.http
-      .get('http://localhost:4000/auth/allUsers')
-      .subscribe((data: any) => {
+      .get<User[]>('http://localhost:4000/auth/allUsers')
+      .subscribe((data) => {
         this.allUsers = data;
-        console.log(data);
+        this.dataSource = data;
       });
-    
   }
-  OnEditButtonClick(user:User) {
+
+  dataSource: User[] = [];
+
+  onEditButtonClick(user: User) {
     this.router.navigateByUrl(`/edit-user-details/${user._id}`, {
       state: { userDetails: user },
     });

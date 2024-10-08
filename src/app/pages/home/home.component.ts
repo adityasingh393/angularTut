@@ -28,6 +28,7 @@ export class HomeComponent {
     // if (email) {
     //   this.getUserDetails(email);
     // }
+    
     this.userInfo = JSON.parse(localStorage.getItem('userDetails') || '{}');
     console.log('userDetails', this.userInfo.age);
   }

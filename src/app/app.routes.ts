@@ -7,6 +7,7 @@ import { loginGuardGuard } from './guards/login-guard.guard';
 import { EditUserDetailsComponent } from './pages/edit-user-details/edit-user-details.component';
 import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 import { AllUsersComponent } from './pages/all-users/all-users.component';
+import { adminGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
   {
@@ -35,7 +36,8 @@ export const routes: Routes = [
   },
   {
     path:'all-users',
-    component:AllUsersComponent
+    component:AllUsersComponent,
+    canActivate:[adminGuard]
   },
   {
     path: '',
