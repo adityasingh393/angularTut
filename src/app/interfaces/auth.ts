@@ -24,3 +24,7 @@ export interface UserEditData {
   phoneNumber: string;
   age: number;
 }
+export interface EmailVerificationData{
+  email:String;
+  otp?:String;
+}

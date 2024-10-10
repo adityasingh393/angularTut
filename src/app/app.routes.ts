@@ -8,6 +8,7 @@ import { EditUserDetailsComponent } from './pages/edit-user-details/edit-user-de
 import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { adminGuard } from './guards/admin.guard';
+import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
 
 export const routes: Routes = [
   {
@@ -24,7 +25,6 @@ export const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [authGuard],
-    
   },
   {
     path: 'edit-user-details/:id',
@@ -32,13 +32,17 @@ export const routes: Routes = [
     canActivate: [authGuard],
   },
   {
-    path:'upload-image',
-    component:FileUploadComponent,
+    path: 'upload-image',
+    component: FileUploadComponent,
   },
   {
-    path:'all-users',
-    component:AllUsersComponent,
-    canActivate:[adminGuard]
+    path: 'all-users',
+    component: AllUsersComponent,
+    canActivate: [adminGuard],
+  },
+  {
+    path: 'verify-email',
+    component: EmailVerificationComponent,
   },
   {
     path: '',

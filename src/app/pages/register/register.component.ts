@@ -44,4 +44,7 @@ export class RegisterComponent {
   onClickLogin() {
     this.router.navigateByUrl('/login');
   }
+  VerifyOtpButtonClick() {
+    this.router.navigateByUrl('/verify-email');
+  }
 }

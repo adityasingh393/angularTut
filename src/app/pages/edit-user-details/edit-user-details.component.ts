@@ -36,7 +36,7 @@ export class EditUserDetailsComponent {
     const getuserData = async (id: string) => {
       console.log("insdie ge ",id)
       await this.http
-        .post('http://localhost:4000/auth/getUserInfoById',{ id})
+        .post('http://localhost:4000/user/getUserInfoById',{ id})
         .subscribe((data: any) => {
           console.log(data);
           this.UserEditData = data;

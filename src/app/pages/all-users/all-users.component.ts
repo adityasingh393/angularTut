@@ -40,7 +40,7 @@ export class AllUsersComponent implements OnInit {
   // }
   ngOnInit() {
     this.http
-      .get<User[]>('http://localhost:4000/auth/allUsers')
+      .get<User[]>('http://localhost:4000/user/allUsers')
       .subscribe((data) => {
         this.allUsers = data;
         console.log('this.allUsers', this.allUsers);

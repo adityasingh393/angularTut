@@ -1,0 +1,28 @@
+<div class="main-container">
+  <form action="#">
+    <div >
+        <input
+        type="email"
+        placeholder="Enter your email"
+        [(ngModel)]="emailVerificationData.email"
+        name="email"
+      />
+      <button type="button" class="btn-secondary" (click)="sendOtpButton()">
+        send otp
+      </button>
+    </div>
+   
+
+    <input
+      type="text"
+      placeholder="Enter the otp recieved on you gmail"
+      [(ngModel)]="emailVerificationData.otp"
+      name="otp"
+    />
+
+    <button type="button" class="btn" (click)="verifyOtpButton()">
+      verify otp
+    </button>
+  </form>
+  <!-- <div *ngIf="emailVerification">you entered the wrong otp</div> -->
+</div>
