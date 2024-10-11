@@ -8,9 +8,11 @@
 }
 .nav-container a {
   color: black;
+  padding: 6px 8px 6px 16px;
   text-decoration: none;
-  padding: 30px;
+  font-size: 20px;
+  color: #524545;
 }
 .nav-container a:hover {
-  color: blue;
+  color: rgb(0, 0, 0);
 }

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { UserInfo } from '../../interfaces/auth';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import localforage from 'localforage';
 
 @Component({
   selector: 'app-home',
@@ -35,7 +36,8 @@ export class HomeComponent {
   }
   onLogOut() {
     this.router.navigateByUrl('/login');
-    localStorage.removeItem('userSessionToken');
+    localforage.removeItem('cookie');
+    localforage.removeItem('role');
   }
   editdata(id: string) {
     this.router.navigateByUrl(`/edit-user-details/${id}`);
