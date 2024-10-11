@@ -16,6 +16,11 @@ export class DasboardComponent {
     private router: Router,
   ) {}
   allUsers: User[] = [];
+
+  usersCreatedToday!: number;
+  usersCreatedFiveDaysAgo!: number;
+  usersCreatedTenDaysAgo!: number;
+
   basicData: any;
   basicOptions: any;
   allUsersLength!: number;
@@ -28,88 +33,82 @@ export class DasboardComponent {
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
     this.http
-      .get<User[]>('http://localhost:4000/user/allUsers', {
+      .get<any>('http://localhost:4000/user/userCreatedAt', {
         withCredentials: true,
       })
       .subscribe((data) => {
-        this.allUsers = data;
-        this.allUsersLength = this.allUsers.length;
+console.log(data);
+        this.usersCreatedToday=data.today.length
+        this.usersCreatedFiveDaysAgo=data.fiveDays.length
+        this.usersCreatedTenDaysAgo=data.tenDays.length
+        this.allUsersLength=data.totalUser.length
+        //this is being initalised here in the subscribe fucntion becuase before when it was outside of the subscribe fucntion
+        // user length was being set on later and it was not taking the value
+
+        //         The issue with your chart not displaying correctly seems related to how the datasets values are assigned. You're setting the chart's dataset based on this.allUsersLength,
+        // but since this.allUsersLength is being updated asynchronously inside the subscribe function, the chart might be initialized before the user data is loaded.
+
+        // To fix this, you can move the chart initialization into the subscribe block to ensure it happens after the user data is fetched and this.allUsersLength is updated.
+        //  Here's how you can modify your ngOnInit() function
+        // here is the link for better understangin https://chatgpt.com/share/670907fd-406c-8010-ba93-b526171c0d54
+        this.basicData = {
+          labels: ['today', 'in 3 days', 'in 5 days', 'total number of users'],
+          datasets: [
+            {
+              label: 'No of user registered in ',
+              data: [
+               this.usersCreatedToday,
+               this.usersCreatedFiveDaysAgo,
+                this.usersCreatedTenDaysAgo,
+                this.allUsersLength
+              ],
+              backgroundColor: [
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+              ],
+              borderColor: [
+                'rgb(255, 159, 64)',
+                'rgb(75, 192, 192)',
+                'rgb(54, 162, 235)',
+                'rgb(153, 102, 255)',
+              ],
+              borderWidth: 1,
+            },
+          ],
+        };
+
+        this.basicOptions = {
+          plugins: {
+            legend: {
+              labels: {
+                color: textColor,
+              },
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                color: textColorSecondary,
+              },
+              grid: {
+                color: surfaceBorder,
+                drawBorder: false,
+              },
+            },
+            x: {
+              ticks: {
+                color: textColorSecondary,
+              },
+              grid: {
+                color: surfaceBorder,
+                drawBorder: false,
+              },
+            },
+          },
+        };
       });
-
-    this.basicData = {
-      labels: ['Q1', 'Q2', 'Q3', 'Q4'],
-      datasets: [
-        {
-          label: 'Users',
-          data: [11, 30, 70, 60],
-          backgroundColor: [
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-          ],
-          borderColor: [
-            'rgb(255, 159, 64)',
-            'rgb(75, 192, 192)',
-            'rgb(54, 162, 235)',
-            'rgb(153, 102, 255)',
-          ],
-          borderWidth: 1,
-        },
-      ],
-    };
-
-    this.basicOptions = {
-      plugins: {
-        legend: {
-          labels: {
-            color: textColor,
-          },
-        },
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            color: textColorSecondary,
-          },
-          grid: {
-            color: surfaceBorder,
-            drawBorder: false,
-          },
-        },
-        x: {
-          ticks: {
-            color: textColorSecondary,
-          },
-          grid: {
-            color: surfaceBorder,
-            drawBorder: false,
-          },
-        },
-      },
-    };
-  }
-
-  current_page: number = 1;
-  rows: number = 5;
-  DispalyList(page: number) {
-    const start = this.rows * (page - 1);
-    const end = start + this.rows;
-    return this.allUsers.slice(start, end);
-  }
-
-  setPagination() {
-    const page_count = Math.ceil(this.allUsers.length / this.rows);
-    return Array.from({ length: page_count }, (_, i) => i + 1);
-  }
-  onPageChange(page: number) {
-    this.current_page = page;
-  }
-
-  onEditButtonClick(user: User) {
-    this.router.navigateByUrl(`/edit-user-details/${user._id}`, {
-      state: { userDetails: user },
-    });
   }
 }
