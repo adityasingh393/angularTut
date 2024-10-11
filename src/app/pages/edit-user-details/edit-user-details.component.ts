@@ -25,14 +25,14 @@ export class EditUserDetailsComponent {
       phoneNumber: '',
     };
   }
+   getID = async () => {
+    await this.route.params.subscribe((params) => {
+      this._id = params['id'];
+      this.UserEditData.id=this._id;
+    });
+  };
   ngOnInit() {
-    const getID = async () => {
-      await this.route.params.subscribe((params) => {
-        this._id = params['id'];
-        console.log('Test ID:', this._id);
-      });
-    };
-    getID();
+    this.getID();
     const getuserData = async (id: string) => {
       console.log("insdie ge ",id)
       await this.http
@@ -40,15 +40,14 @@ export class EditUserDetailsComponent {
         .subscribe((data: any) => {
           console.log(data);
           this.UserEditData = data;
+          console.log(this.UserEditData, "from getuserdata")
         });
     };
     getuserData(this._id);
   }
   onSave() {
-    //  const changedAge= this.UserEditData.age;
-    //  const changedUserName=this.UserEditData.userName;
-    //  const changedPhoneNumber=this.UserEditData.phoneNumber;
-    localStorage.setItem('userDetails', JSON.stringify(this.UserEditData));
-    this.router.navigateByUrl('/home');
+    this.http.put('http://localhost:4000/user/updateUserById', this.UserEditData).subscribe((res:any)=>{
+      console.log(res,"from put api in edit user detailes")
+    })
   }
 }

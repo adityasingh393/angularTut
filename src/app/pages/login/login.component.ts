@@ -22,25 +22,18 @@ export class LoginComponent {
       password: '',
     };
   }
-  // debugger: any;
   onLogin() {
-    // console.log(this.loginData);
     this.http
-      .post('http://localhost:4000/auth/login', this.loginData)
+      .post('http://localhost:4000/auth/login', this.loginData, {
+        withCredentials: true,
+      })
       .subscribe((res: any) => {
         console.log(res);
         if (!res.result) {
-          // console.log(
-          //   'user data saved on logged in',
-          //   res.authentication.sessionToken
-          // );
           localStorage.setItem(
             'userSessionToken',
             res.authentication.sessionToken
           );
-          localStorage.setItem('userDetails', JSON.stringify(res));
-          // localStorage.setItem('userEmail', this.loginData.email);
-          console.log('login dine');
           this.router.navigateByUrl('/home');
         } else {
           console.log('login fail');

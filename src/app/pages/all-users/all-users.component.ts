@@ -23,28 +23,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class AllUsersComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) {}
   allUsers: User[] = [];
-  // displayedColumns: string[] = [
-  //   'position',
-  //   'name',
-  //   'weight',
-  //   'symbol',
-  //   'actions',
-  // ];
-  // dataSource = new MatTableDataSource<User>(this.allUsers);
-
-  // @ViewChild(MatPaginator) paginator!:MatPaginator;
-  // ngAfterViewInit() {
-  //   this.dataSource.paginator = this.paginator;
-
-  //   console.log('this.dataSource', this.dataSource.paginator)
-  // }
   ngOnInit() {
     this.http
-      .get<User[]>('http://localhost:4000/user/allUsers')
+      .get<User[]>('http://localhost:4000/user/allUsers', {
+        withCredentials: true,
+      })
       .subscribe((data) => {
         this.allUsers = data;
-        console.log('this.allUsers', this.allUsers);
-        // this.dataSource = data;
       });
   }
 

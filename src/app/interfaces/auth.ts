@@ -20,6 +20,7 @@ export interface UserInfo {
 }
 
 export interface UserEditData {
+  id?:string;
   userName: string;
   phoneNumber: string;
   age: number;

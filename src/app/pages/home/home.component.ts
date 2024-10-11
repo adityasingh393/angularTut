@@ -12,10 +12,9 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  // constructor(private http: HttpClient) {}
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
   userInfo: UserInfo = {
-    _id:'',
+    _id: '',
     email: '',
     phoneNumber: '',
     age: 0,
@@ -23,20 +22,19 @@ export class HomeComponent {
   };
 
   ngOnInit() {
-    // const email = localStorage.getItem('userEmail');
-    // console.log(email);
-    // if (email) {
-    //   this.getUserDetails(email);
-    // }
-    
-    this.userInfo = JSON.parse(localStorage.getItem('userDetails') || '{}');
-    console.log('userDetails', this.userInfo.age);
+    this.http
+      .get('http://localhost:4000/user/getUserInfoBySessionId', {
+        withCredentials: true,
+      })
+      .subscribe((res: any) => {
+        this.userInfo = res;
+      });
   }
   onLogOut() {
     this.router.navigateByUrl('/login');
     localStorage.removeItem('userSessionToken');
   }
-  editdata(id:string) {
+  editdata(id: string) {
     this.router.navigateByUrl(`/edit-user-details/${id}`);
   }
   onUploadClick() {
