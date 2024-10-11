@@ -4,7 +4,7 @@ import { EmailVerificationData } from '../../interfaces/auth';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ButtonComponent } from "../../component/button/button.component";
+import { ButtonComponent } from '../../component/button/button.component';
 
 @Component({
   selector: 'app-email-verification',
@@ -16,9 +16,12 @@ import { ButtonComponent } from "../../component/button/button.component";
 export class EmailVerificationComponent {
   emailVerificationData: EmailVerificationData;
   emailVerification: boolean = true;
-  button:String='button';
-  label:String='Send OTP';
-  constructor(private http: HttpClient, private router: Router) {
+  button: String = 'button';
+  label: String = 'Send OTP';
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {
     this.emailVerificationData = {
       email: '',
       otp: '',
@@ -28,7 +31,7 @@ export class EmailVerificationComponent {
     this.http
       .post(
         'http://localhost:4000/auth/otp-generate',
-        this.emailVerificationData
+        this.emailVerificationData,
       )
       .subscribe((res: any) => {
         alert('otp sent succesfully');

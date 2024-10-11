@@ -3,7 +3,10 @@ import { Router } from '@angular/router';
 import { ImageUploadService } from '../../services/image-upload.service';
 import { CommonModule } from '@angular/common';
 class ImageSnippet {
-  constructor(public src: string, public file: File) {}
+  constructor(
+    public src: string,
+    public file: File,
+  ) {}
 }
 
 @Component({
@@ -24,7 +27,7 @@ export class FileUploadComponent implements OnInit {
 
   onChange(event: any) {
     this.file = event.target.files[0];
-  } 
+  }
 
   onUpload() {
     this.loading = !this.loading;

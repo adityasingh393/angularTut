@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ImageUploadService {
-  baseApiUrl = 'https://file.io/'; //i can pkcae any api url in this place 
+  baseApiUrl = 'https://file.io/'; //i can pkcae any api url in this place
   constructor(private http: HttpClient) {}
   upload(file: any): Observable<any> {
     const formData = new FormData();

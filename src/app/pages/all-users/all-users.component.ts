@@ -1,8 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import {
-  Component,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AllUsers, User } from '../../interfaces/allUsers';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -13,17 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @Component({
   selector: 'app-all-users',
   standalone: true,
-  imports: [
-    CommonModule,
-    MatTableModule,
-    MatButtonModule,
-    MatPaginatorModule,
-  ],
+  imports: [CommonModule, MatTableModule, MatButtonModule, MatPaginatorModule],
   templateUrl: './all-users.component.html',
   styleUrls: ['./all-users.component.css'],
 })
 export class AllUsersComponent implements OnInit {
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {}
   allUsers: User[] = [];
   ngOnInit() {
     this.http
@@ -32,7 +27,8 @@ export class AllUsersComponent implements OnInit {
       })
       .subscribe((data) => {
         this.allUsers = data;
-      });}
+      });
+  }
 
   current_page: number = 1;
   rows: number = 5;
@@ -54,6 +50,5 @@ export class AllUsersComponent implements OnInit {
     this.router.navigateByUrl(`/edit-user-details/${user._id}`, {
       state: { userDetails: user },
     });
-
   }
 }

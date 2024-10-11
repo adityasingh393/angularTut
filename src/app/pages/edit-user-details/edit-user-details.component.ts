@@ -17,7 +17,7 @@ export class EditUserDetailsComponent {
   constructor(
     private router: Router,
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {
     this.UserEditData = {
       userName: '',
@@ -25,17 +25,17 @@ export class EditUserDetailsComponent {
       phoneNumber: '',
     };
   }
-   getID = async () => {
+  getID = async () => {
     await this.route.params.subscribe((params) => {
       this._id = params['id'];
-      this.UserEditData.id=this._id;
+      this.UserEditData.id = this._id;
     });
   };
   ngOnInit() {
     this.getID();
     const getuserData = async (id: string) => {
       await this.http
-        .post('http://localhost:4000/user/getUserInfoById',{ id})
+        .post('http://localhost:4000/user/getUserInfoById', { id })
         .subscribe((data: any) => {
           this.UserEditData = data;
         });
@@ -43,8 +43,10 @@ export class EditUserDetailsComponent {
     getuserData(this._id);
   }
   onSave() {
-    this.http.put('http://localhost:4000/user/updateUserById', this.UserEditData).subscribe((res:any)=>{
-      this.router.navigateByUrl('/admin')
-    })
+    this.http
+      .put('http://localhost:4000/user/updateUserById', this.UserEditData)
+      .subscribe((res: any) => {
+        this.router.navigateByUrl('/admin');
+      });
   }
 }

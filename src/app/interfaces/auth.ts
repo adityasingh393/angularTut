@@ -12,7 +12,7 @@ export interface Login {
 }
 
 export interface UserInfo {
-  _id:string;
+  _id: string;
   email: string;
   userName: string;
   phoneNumber: string;
@@ -20,12 +20,12 @@ export interface UserInfo {
 }
 
 export interface UserEditData {
-  id?:string;
+  id?: string;
   userName: string;
   phoneNumber: string;
   age: number;
 }
-export interface EmailVerificationData{
-  email:String;
-  otp?:String;
+export interface EmailVerificationData {
+  email: String;
+  otp?: String;
 }

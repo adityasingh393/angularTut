@@ -11,7 +11,10 @@ import { ChartModule } from 'primeng/chart';
   styleUrl: './dasboard.component.css',
 })
 export class DasboardComponent {
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {}
   allUsers: User[] = [];
   basicData: any;
   basicOptions: any;
@@ -20,7 +23,7 @@ export class DasboardComponent {
     const documentStyle = getComputedStyle(document.documentElement);
     const textColor = documentStyle.getPropertyValue('--text-color');
     const textColorSecondary = documentStyle.getPropertyValue(
-      '--text-color-secondary'
+      '--text-color-secondary',
     );
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 

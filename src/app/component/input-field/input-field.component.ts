@@ -37,6 +37,4 @@ import { FormsModule } from '@angular/forms';
 export class StringInputComponent {
   @Input() label: string = '';
   @Input() value: string = '';
-  
-
 }

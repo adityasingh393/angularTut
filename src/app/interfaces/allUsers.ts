@@ -4,7 +4,7 @@ export interface AllUsers {
 
 export interface User {
   _id?: string;
-  role?:string;
+  role?: string;
   userName?: string;
   phoneNumber?: string;
   age?: number;

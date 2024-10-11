@@ -17,7 +17,10 @@ import localForage from 'localforage';
 })
 export class LoginComponent {
   loginData: Login;
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {
     this.loginData = {
       email: '',
       password: '',
@@ -31,7 +34,7 @@ export class LoginComponent {
       .subscribe((res: any) => {
         localForage.setItem('role', res.role);
         if (!res.result) {
-          localForage.setItem('cookie',res.authentication.sessionToken)
+          localForage.setItem('cookie', res.authentication.sessionToken);
           this.router.navigateByUrl('/home');
         } else {
           alert(res.message);
