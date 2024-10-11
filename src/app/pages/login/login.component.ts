@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Login } from '../../interfaces/auth';
 import { StringInputComponent } from '../../component/input-field/input-field.component';
 import { CommonModule } from '@angular/common';
+import localForage from 'localforage';
 // import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -28,15 +29,11 @@ export class LoginComponent {
         withCredentials: true,
       })
       .subscribe((res: any) => {
-        console.log(res);
+        localForage.setItem('role', res.role);
         if (!res.result) {
-          localStorage.setItem(
-            'userSessionToken',
-            res.authentication.sessionToken
-          );
+          localForage.setItem('cookie',res.authentication.sessionToken)
           this.router.navigateByUrl('/home');
         } else {
-          console.log('login fail');
           alert(res.message);
         }
       });

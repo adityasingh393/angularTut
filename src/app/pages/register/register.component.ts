@@ -34,10 +34,6 @@ export class RegisterComponent {
             'userSessionToken',
             res.authentication.sessionToken
           );
-          console.log(
-            ' res.authentication.sessionToken from register',
-            res.authentication.sessionToken
-          );
           alert('registration succesful');
           this.router.navigateByUrl('/home');
         } else {

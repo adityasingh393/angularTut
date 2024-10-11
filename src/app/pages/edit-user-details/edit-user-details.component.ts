@@ -34,20 +34,17 @@ export class EditUserDetailsComponent {
   ngOnInit() {
     this.getID();
     const getuserData = async (id: string) => {
-      console.log("insdie ge ",id)
       await this.http
         .post('http://localhost:4000/user/getUserInfoById',{ id})
         .subscribe((data: any) => {
-          console.log(data);
           this.UserEditData = data;
-          console.log(this.UserEditData, "from getuserdata")
         });
     };
     getuserData(this._id);
   }
   onSave() {
     this.http.put('http://localhost:4000/user/updateUserById', this.UserEditData).subscribe((res:any)=>{
-      console.log(res,"from put api in edit user detailes")
+      this.router.navigateByUrl('/admin')
     })
   }
 }

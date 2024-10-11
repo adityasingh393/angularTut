@@ -9,6 +9,7 @@ import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { adminGuard } from './guards/admin.guard';
 import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
+import { DasboardComponent } from './pages/dasboard/dasboard.component';
 
 export const routes: Routes = [
   {
@@ -36,9 +37,22 @@ export const routes: Routes = [
     component: FileUploadComponent,
   },
   {
-    path: 'all-users',
-    component: AllUsersComponent,
-    canActivate: [adminGuard],
+    path: 'admin',
+    children: [
+      {
+        path: 'all-users',
+        component: AllUsersComponent,
+      },
+      {
+        path: 'dashboard',
+        component: DasboardComponent,
+      },
+      {
+        path: '',
+        component: AllUsersComponent,
+      },
+    ],
+    canActivate: [adminGuard, authGuard],
   },
   {
     path: 'verify-email',

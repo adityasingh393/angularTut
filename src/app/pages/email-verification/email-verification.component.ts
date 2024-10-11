@@ -31,7 +31,6 @@ export class EmailVerificationComponent {
         this.emailVerificationData
       )
       .subscribe((res: any) => {
-        console.log(res.success);
         alert('otp sent succesfully');
       });
   }
