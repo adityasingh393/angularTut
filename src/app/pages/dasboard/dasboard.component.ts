@@ -55,7 +55,7 @@ console.log(data);
           labels: ['today', 'in 3 days', 'in 5 days', 'total number of users'],
           datasets: [
             {
-              label: 'No of user registered in ',
+              label: 'No of user registered',
               data: [
                this.usersCreatedToday,
                this.usersCreatedFiveDaysAgo,
