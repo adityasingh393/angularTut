@@ -1,9 +1,20 @@
 <div class="header-container row full-center">
   <nav class="nav-container">
-    <a href="home">Home</a>
-    <a href="login">Login</a>
-    <a href="register">Register</a>
-    <a href="admin">All Users</a>
+    <div *ngIf="!userLogged">
+      <a href="login">Login</a>
+    </div>
+    <a href="admin">Dashboard</a>
     <a href="upload-image">Upload-Image</a>
+
+    <div *ngIf="userLogged" class="select-container">
+      <select
+        name="auth-options"
+        id="auth-options"
+        (change)="onChangeOption($event)"
+      >
+        <option value="home">Profile</option>
+        <option value="logout">Logout</option>
+      </select>
+    </div>
   </nav>
 </div>

@@ -7,10 +7,11 @@ import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidebarComponent } from "../../component/sidebar/sidebar.component";
 @Component({
   selector: 'app-all-users',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatButtonModule, MatPaginatorModule],
+  imports: [CommonModule, MatTableModule, MatButtonModule, MatPaginatorModule, SidebarComponent],
   templateUrl: './all-users.component.html',
   styleUrls: ['./all-users.component.css'],
 })

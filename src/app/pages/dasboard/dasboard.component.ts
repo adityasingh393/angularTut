@@ -3,10 +3,11 @@ import { User } from '../../interfaces/allUsers';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ChartModule } from 'primeng/chart';
+import { SidebarComponent } from "../../component/sidebar/sidebar.component";
 @Component({
   selector: 'app-dasboard',
   standalone: true,
-  imports: [ChartModule],
+  imports: [ChartModule, SidebarComponent],
   templateUrl: './dasboard.component.html',
   styleUrl: './dasboard.component.css',
 })

@@ -1,0 +1,9 @@
+<div class="sidebarContainer">
+  <div class="sidenav-toggle">
+    <button class="hamburger" (click)="toogeSidebar()">☰</button>
+  </div>
+  <div [ngClass]="{ sidenav: isSidebarOpen }" *ngIf="isSidebarOpen">
+    <a href="admin/dashboard">Dashboard</a>
+    <a href="admin/all-users">Users</a>
+  </div>
+</div>
