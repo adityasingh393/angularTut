@@ -1,8 +1,7 @@
 <div class="header-container row full-center">
   <nav class="nav-container">
-    <div *ngIf="!userLogged">
-      <a href="login">Login</a>
-    </div>
+    <a *ngIf="!userLogged" href="login">Login</a>
+
     <a href="admin">Dashboard</a>
     <a href="upload-image">Upload-Image</a>
 
@@ -12,6 +11,7 @@
         id="auth-options"
         (change)="onChangeOption($event)"
       >
+        <option [defaultSelected]="true">User</option>
         <option value="home">Profile</option>
         <option value="logout">Logout</option>
       </select>

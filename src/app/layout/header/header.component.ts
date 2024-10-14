@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
       localforage.removeItem('role');
     }
     if(this.selectedOption==="home"){
-      this.router.navigateByUrl("/home");
+      this.router.navigateByUrl("home");
     }
     console.log("selectedOption:", this.selectedOption);
   }

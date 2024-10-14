@@ -20,6 +20,7 @@
 .select-container {
   display: inline-block;
   position: relative;
+  /* background-color: #5b9bd5; */
 }
 
 select {
@@ -27,15 +28,13 @@ select {
   padding: 8px;
   font-size: 16px;
   color: #333;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 8px;
-  background-color: white;
-  /* appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer; */
-  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color:  rgb(142, 162, 216);
+  transition:
+    border-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 select:hover {
