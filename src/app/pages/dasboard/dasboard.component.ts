@@ -6,7 +6,7 @@ import { SidebarComponent } from '../../component/sidebar/sidebar.component';
 @Component({
   selector: 'app-dasboard',
   standalone: true,
-  imports: [ChartModule,SidebarComponent],
+  imports: [ChartModule, SidebarComponent],
   templateUrl: './dasboard.component.html',
   styleUrls: ['./dasboard.component.css'],
 })
@@ -31,7 +31,7 @@ export class DasboardComponent {
       })
       .subscribe((data) => {
         this.usersData = data;
-        console.log(this.usersData,"saved users data ");
+        console.log(this.usersData, 'saved users data ');
         this.updateChart('daily');
 
         this.basicOptions = {
@@ -75,28 +75,32 @@ export class DasboardComponent {
   updateChart(range: string) {
     let labels: string[] = [];
     let data: number[] = [];
+    switch (range) {
+      case 'daily':
+        labels = ['Today', '5 Days Ago', '10 Days Ago'];
+        data = [
+          this.usersData.days.today.length,
+          this.usersData.days.fiveDays.length,
+          this.usersData.days.tenDays.length,
+        ];
+        break;
 
-    if (range === 'daily') {
-      labels = ['Today', '5 Days Ago', '10 Days Ago'];
-      data = [
-        this.usersData.days.today.length,
-        this.usersData.days.fiveDays.length,
-        this.usersData.days.tenDays.length,
-      ];
-    } else if (range === 'monthly') {
-      labels = ['1 Month', '3 Months', '6 Months'];
-      data = [
-        this.usersData.monthly.oneMonth.length,
-        this.usersData.monthly.threeMonth.length,
-        this.usersData.monthly.sixMonth.length,
-      ];
-    } else if (range === 'yearly') {
-      labels = ['1 Year', '5 Years', '10 Years'];
-      data = [
-        this.usersData.yearly.oneYear.length,
-        this.usersData.yearly.fiveYear.length,
-        this.usersData.yearly.tenYears.length,
-      ];
+      case 'monthly':
+        labels = ['1 Month', '3 Months', '6 Months'];
+        data = [
+          this.usersData.monthly.oneMonth.length,
+          this.usersData.monthly.threeMonth.length,
+          this.usersData.monthly.sixMonth.length,
+        ];
+        break;
+      case 'yearly':
+        labels = ['1 Year', '5 Years', '10 Years'];
+        data = [
+          this.usersData.yearly.oneYear.length,
+          this.usersData.yearly.fiveYear.length,
+          this.usersData.yearly.tenYears.length,
+        ];
+        break;
     }
     this.basicData = {
       labels: labels,
