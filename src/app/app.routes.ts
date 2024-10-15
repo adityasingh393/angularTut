@@ -10,6 +10,7 @@ import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { adminGuard } from './guards/admin.guard';
 import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
 import { DasboardComponent } from './pages/dasboard/dasboard.component';
+import { optVerificationGuard } from './guards/opt-verification.guard';
 
 export const routes: Routes = [
   {
@@ -57,6 +58,7 @@ export const routes: Routes = [
   {
     path: 'verify-email',
     component: EmailVerificationComponent,
+    canActivate:[loginGuardGuard]
   },
   {
     path: '',

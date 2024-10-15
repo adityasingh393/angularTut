@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ButtonComponent } from '../../component/button/button.component';
+import localforage from 'localforage';
 
 @Component({
   selector: 'app-email-verification',
@@ -42,6 +43,7 @@ export class EmailVerificationComponent {
     this.http
       .post('http://localhost:4000/auth/verify-otp', this.emailVerificationData)
       .subscribe((res: any) => {
+        localforage.setItem('otpVerificationStatus', 'done');
         this.router.navigateByUrl('/register');
       });
   }

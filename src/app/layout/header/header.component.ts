@@ -13,34 +13,37 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router) {}
   userLogged: boolean = false;
-  selectedOption!: String | null;
   isAdmin: boolean = false;
+  dropdownOpen: boolean = false;
+
+  constructor(private router: Router) {}
+
   async ngOnInit() {
     try {
       const cookie = await localforage.getItem('cookie');
-      // console.log(cookie)
       const role = await localforage.getItem('role');
-      if (role === 'Admin') {
-        this.isAdmin = true;
-      }
+      this.isAdmin = role === 'Admin';
       this.userLogged = !!cookie;
     } catch (error) {
       console.error('Error retrieving cookie:', error);
     }
   }
-  onChangeOption(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    this.selectedOption = selectElement.value;
-    if (this.selectedOption === 'logout') {
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  onChangeOption(option: string) {
+    if (option === 'logout') {
       this.router.navigateByUrl('/login');
       localforage.removeItem('cookie');
       localforage.removeItem('role');
     }
-    if (this.selectedOption === 'home') {
+    if (option === 'home') {
       this.router.navigateByUrl('home');
     }
-    console.log('selectedOption:', this.selectedOption);
+
+    this.dropdownOpen = false;
   }
 }

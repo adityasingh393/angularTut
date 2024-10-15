@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from '../../component/button/button.component';
+import localforage from 'localforage';
 
 @Component({
   selector: 'app-register',
@@ -38,6 +39,7 @@ export class RegisterComponent {
             res.authentication.sessionToken,
           );
           alert('registration succesful');
+          localforage.removeItem("otpVerificationStatus")
           this.router.navigateByUrl('/home');
         } else {
           alert(res.message);
