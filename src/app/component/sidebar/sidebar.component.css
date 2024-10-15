@@ -40,7 +40,7 @@
 
 .sidenav-toggle {
   position: fixed;
-  top: 30px;
+  top: 25px;
   left: 10px;
   z-index: 2;
 }

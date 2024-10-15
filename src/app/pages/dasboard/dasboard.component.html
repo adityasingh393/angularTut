@@ -1,6 +1,16 @@
 <div class="container">
-<app-sidebar></app-sidebar>
+  <app-sidebar></app-sidebar>
+   
   <div class="card">
     <p-chart type="bar" [data]="basicData" [options]="basicOptions" />
   </div>
+  <select
+    name="auth-options"
+    id="auth-options"
+    (change)="onChangeOption($event)"
+  >
+    <option value="daily">Days</option>
+    <option value="monthly">Monthly</option>
+    <option value="yearly">Yearly</option>
+  </select>
 </div>

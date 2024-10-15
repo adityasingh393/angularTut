@@ -6,21 +6,30 @@
   box-sizing: border-box;
   background-color: rgb(142, 162, 216);
 }
+.nav-container{
+  display: flex;
+ align-items: center;
+ width: 100%;
+}
 .nav-container a {
   color: black;
-  padding: 6px 8px 6px 16px;
+  padding: 6px 8px 6px 38px;
   text-decoration: none;
   font-size: 20px;
   color: #524545;
+}
+.nav-container a:active{
+  background-color: aquamarine;
 }
 .nav-container a:hover {
   color: rgb(0, 0, 0);
 }
 
 .select-container {
-  display: inline-block;
-  position: relative;
-  /* background-color: #5b9bd5; */
+  display: flex;
+  /* position: relative; */
+  /* display: inline-flex; */
+  margin-left: auto;
 }
 
 select {
@@ -30,7 +39,7 @@ select {
   color: #333;
   border: none;
   border-radius: 8px;
-  background-color:  rgb(142, 162, 216);
+  background-color: rgb(142, 162, 216);
   transition:
     border-color 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out;

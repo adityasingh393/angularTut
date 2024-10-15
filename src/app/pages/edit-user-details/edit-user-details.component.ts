@@ -46,7 +46,7 @@ export class EditUserDetailsComponent {
     this.http
       .put('http://localhost:4000/user/updateUserById', this.UserEditData)
       .subscribe((res: any) => {
-        this.router.navigateByUrl('/admin');
+        alert('your changes has been saved');
       });
   }
 }

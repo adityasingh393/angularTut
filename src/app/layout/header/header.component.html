@@ -1,17 +1,23 @@
 <div class="header-container row full-center">
   <nav class="nav-container">
     <a *ngIf="!userLogged" href="login">Login</a>
-
-    <a href="admin">Dashboard</a>
+    <a *ngIf="userLogged && isAdmin" href="admin">Admin Portal</a>
     <a href="upload-image">Upload-Image</a>
-
     <div *ngIf="userLogged" class="select-container">
       <select
         name="auth-options"
         id="auth-options"
         (change)="onChangeOption($event)"
       >
-        <option [defaultSelected]="true">User</option>
+        <option [defaultSelected]="true">
+          <img
+            src="../../../../public/photo-1524498250077-390f9e378fc0 1 (1).png"
+            alt="user"
+            height="30px"
+            width="30px"
+          />
+          User
+        </option>
         <option value="home">Profile</option>
         <option value="logout">Logout</option>
       </select>
