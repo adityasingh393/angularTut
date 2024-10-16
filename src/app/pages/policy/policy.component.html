@@ -1,0 +1,23 @@
+<div class="main-container">
+  <app-sidebar></app-sidebar>
+  <form action="#">
+    <label name="title">Title</label>
+    <input
+      type="text"
+      name="title"
+      placeholder="Privacy Policy Title"
+      [(ngModel)]="policyData.title"
+    />
+
+    <label name="category">Category </label>
+    <input name="w3review" [(ngModel)]="policyData.category" />
+
+    <label name="content">Content</label>
+    <textarea
+      name="content"
+      [(ngModel)]="policyData.content"
+      rows="10"
+    ></textarea>
+    <button type="button" class="btn" (click)="onClick()">Save Changes</button>
+  </form>
+</div>
