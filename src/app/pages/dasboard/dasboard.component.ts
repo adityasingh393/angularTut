@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ChartModule } from 'primeng/chart';
 import { SidebarComponent } from '../../component/sidebar/sidebar.component';
+import { KENDO_DROPDOWNBUTTON } from '@progress/kendo-angular-buttons';
+import { DropDownButtonForGraph } from '../../interfaces/common';
 
 @Component({
   selector: 'app-dasboard',
   standalone: true,
-  imports: [ChartModule, SidebarComponent],
+  imports: [ChartModule, SidebarComponent, KENDO_DROPDOWNBUTTON],
   templateUrl: './dasboard.component.html',
   styleUrls: ['./dasboard.component.css'],
 })
@@ -14,7 +16,11 @@ export class DasboardComponent {
   basicData: any;
   basicOptions: any;
   usersData: any;
-
+  dropDownButtonList: DropDownButtonForGraph[] = [
+    { title: 'Days', value: 'daily' },
+    { title: 'Monthly', value: 'monthly' },
+    { title: 'Yearly', value: 'yearly' },
+  ];
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -67,8 +73,8 @@ export class DasboardComponent {
       });
   }
 
-  onChangeOption(event: Event) {
-    const selectedOption = (event.target as HTMLSelectElement).value;
+  onChangeOption(event: DropDownButtonForGraph) {
+    const selectedOption = event.value;
     console.log(selectedOption, 'selectedOption');
     this.updateChart(selectedOption);
   }

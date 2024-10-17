@@ -5,20 +5,16 @@
     <a href="upload-image">Upload-Image</a>
 
     <div class="select-container" *ngIf="userLogged">
-      <img
-        src="assets/usericon.png"
-        alt="user"
-        height="30px"
-        width="30px"
-        (click)="toggleDropdown()"
-        class="user-icon"
-      />
-      <div class="dropdown" *ngIf="dropdownOpen">
-        <ul>
-          <li (click)="onChangeOption('home')">Profile</li>
-          <li (click)="onChangeOption('logout')">Logout</li>
-        </ul>
-      </div>
+      <kendo-dropdownbutton
+        [data]="dropDownButtonList"
+        [textField]="'title'"
+        [svgIcon]="profileIcon"
+        themeColor="secondary"
+        fillMode="flat"
+        (itemClick)="onChangeOption($event)"
+      >
+        <!-- i dont think [textField="'title'"] is needed but it was not working wihtout this -->
+      </kendo-dropdownbutton>
     </div>
   </nav>
 </div>
