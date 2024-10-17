@@ -4,7 +4,7 @@
     <h1>All Users</h1>
   </div>
   <app-sidebar></app-sidebar>
-  <div class="main-container">
+  <!-- <div class="main-container">
     <div class="table-container">
       <table>
         <thead>
@@ -23,9 +23,11 @@
             <td>{{ item.phoneNumber }}</td>
             <td>
               <button
-                type="button"
-                class="btn"
                 (click)="onEditButtonClick(item)"
+                type="button"
+                kendoButton
+                themeColor="primary"
+                fillMode="flat"
               >
                 Edit
               </button>
@@ -35,15 +37,45 @@
       </table>
     </div>
     <div class="paginator-container">
-      <button
-        *ngFor="let page of setPagination()"
-        class="btn"
-        (click)="onPageChange(page)"
-      >
-        {{ page }}
-      </button>
+      <kendo-buttongroup>
+        <button
+          kendoButton
+          *ngFor="let page of setPagination()"
+          themeColor="primary"
+          fillMode="outline"
+          [togglable]="true"
+          (click)="onPageChange(page)"
+        >
+          {{ page }}
+        </button>
+      </kendo-buttongroup>
     </div>
-  </div>
+  </div> -->
 
- 
+  <div>
+    <kendo-grid [kendoGridBinding]="allUsers" [pageable]="true" [pageSize]="5">
+      <kendo-grid-column field="userName" title="User Name"></kendo-grid-column>
+      <kendo-grid-column field="email" title="Email"></kendo-grid-column>
+      <kendo-grid-column field="age" title="Age"></kendo-grid-column>
+      <kendo-grid-column
+        field="phoneNumber"
+        title="Phone Number"
+      ></kendo-grid-column>
+      <kendo-grid-column>
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <!-- //The let-dataItem syntax allows you to access the current row's data.
+          You can then pass dataItem directly to your onEditButtonClick method, -->
+          <!-- which will contain the user data for that row. -->
+          <button
+            kendoButton
+            themeColor="primary"
+            fillMode="outline"
+            (click)="onEditButtonClick(dataItem)"
+          >
+            Edit
+          </button>
+        </ng-template>
+      </kendo-grid-column>
+    </kendo-grid>
+  </div>
 </div>

@@ -12,6 +12,7 @@ import { EmailVerificationComponent } from './pages/email-verification/email-ver
 import { DasboardComponent } from './pages/dasboard/dasboard.component';
 import { optVerificationGuard } from './guards/opt-verification.guard';
 import { PolicyComponent } from './pages/policy/policy.component';
+import { KendoImplementationComponent } from './pages/kendo-implementation/kendo-implementation.component';
 
 export const routes: Routes = [
   {
@@ -52,6 +53,10 @@ export const routes: Routes = [
       {
         path: 'edit-policy/:id',
         component: PolicyComponent,
+      },
+      {
+        path: 'kendo',
+        component: KendoImplementationComponent,
       },
       {
         path: '',

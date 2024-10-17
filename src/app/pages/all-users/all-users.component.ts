@@ -7,11 +7,21 @@ import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidebarComponent } from "../../component/sidebar/sidebar.component";
+import { SidebarComponent } from '../../component/sidebar/sidebar.component';
+import { KENDO_GRID } from '@progress/kendo-angular-grid';
+import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 @Component({
   selector: 'app-all-users',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatButtonModule, MatPaginatorModule, SidebarComponent],
+  imports: [
+    CommonModule,
+    MatTableModule,
+    MatButtonModule,
+    KENDO_GRID,
+    KENDO_BUTTON,
+    MatPaginatorModule,
+    SidebarComponent,
+  ],
   templateUrl: './all-users.component.html',
   styleUrls: ['./all-users.component.css'],
 })
