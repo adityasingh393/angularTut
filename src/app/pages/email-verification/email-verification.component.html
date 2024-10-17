@@ -1,7 +1,7 @@
 <div class="main-container">
   <form action="#">
-    <div >
-        <input
+    <div>
+      <input
         type="email"
         placeholder="Enter your email"
         [(ngModel)]="emailVerificationData.email"
@@ -10,11 +10,16 @@
       <!-- <app-button 
       [buttonType]="button" [label]="label" [clickFunction]="sendOtpButton()"></app-button> -->
 
-      <button type="button" class="btn-secondary" (click)="sendOtpButton()">
+      <button
+        kendoButton
+        themeColor="primary"
+        fillMode="solid"
+        class="btn"
+        (click)="sendOtpButton()"
+      >
         send otp
       </button>
     </div>
-   
 
     <input
       type="text"
@@ -23,7 +28,12 @@
       name="otp"
     />
 
-    <button type="button" class="btn" (click)="verifyOtpButton()">
+    <button
+      kendoButton
+      themeColor="primary"
+      fillMode="solid"
+      (click)="verifyOtpButton()"
+    >
       verify otp
     </button>
   </form>

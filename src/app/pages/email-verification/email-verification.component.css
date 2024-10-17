@@ -43,17 +43,15 @@ input:focus {
 }
 
 .btn {
-  background-color: #007bff;
-  color: white;
   border: none;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 9px;
+  margin-left: 20px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.btn-secondary:hover{
-    background-color: #0056b3;
+.btn-secondary:hover {
+  background-color: #0056b3;
 }
 .btn:hover {
   background-color: #0056b3;

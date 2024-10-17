@@ -1,7 +1,14 @@
 <div class="main-container">
   <input class="btn-secondary" type="file" (change)="onChange($event)" />
 
-  <button (click)="onUpload()" class="btn">Upload</button>
+  <button
+    (click)="onUpload()"
+    kendoButton
+    themeColor="primary"
+    fillMode="outline"
+  >
+    Upload
+  </button>
   <div class="container" *ngIf="shortLink">
     <h2>Visit Here</h2>
     <a target="_blank" href="{{ shortLink }}">{{ shortLink }}</a>

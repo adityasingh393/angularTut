@@ -4,11 +4,12 @@ import { policyData } from '../../interfaces/policy';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SidebarComponent } from "../../component/sidebar/sidebar.component";
+import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 
 @Component({
   selector: 'app-policy',
   standalone: true,
-  imports: [FormsModule, SidebarComponent],
+  imports: [FormsModule, SidebarComponent,KENDO_BUTTON],
   templateUrl: './policy.component.html',
   styleUrl: './policy.component.css',
 })

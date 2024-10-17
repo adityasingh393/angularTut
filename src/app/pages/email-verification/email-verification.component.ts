@@ -6,11 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ButtonComponent } from '../../component/button/button.component';
 import localforage from 'localforage';
+import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 
 @Component({
   selector: 'app-email-verification',
   standalone: true,
-  imports: [FormsModule, CommonModule, ButtonComponent],
+  imports: [FormsModule, CommonModule,KENDO_BUTTON, ButtonComponent],
   templateUrl: './email-verification.component.html',
   styleUrl: './email-verification.component.css',
 })

@@ -6,10 +6,29 @@
     <p>Age: {{ userInfo.age }}</p>
   </div>
   <div class="btn-container">
-    <button (click)="editdata(userInfo._id)" class="btn">Edit details</button>
-    <button type="button" class="btn" (click)="onUploadClick()">
+    <button
+      (click)="editdata(userInfo._id)"
+      kendoButton
+      themeColor="primary"
+      fillMode="outline"
+    >
+      Edit details
+    </button>
+    <button
+      kendoButton
+      themeColor="primary"
+      fillMode="outline"
+      (click)="onUploadClick()"
+    >
       Upload Image
     </button>
-    <button (click)="onLogOut()" class="btn">LOGOUT</button>
+    <button
+      (click)="onLogOut()"
+      kendoButton
+      themeColor="primary"
+      fillMode="outline"
+    >
+      Logout
+    </button>
   </div>
 </div>

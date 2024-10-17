@@ -4,11 +4,12 @@ import { UserInfo } from '../../interfaces/auth';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import localforage from 'localforage';
+import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, KENDO_BUTTON],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

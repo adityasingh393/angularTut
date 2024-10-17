@@ -18,6 +18,13 @@
       [(ngModel)]="policyData.content"
       rows="10"
     ></textarea>
-    <button type="button" class="btn" (click)="onClick()">Save Changes</button>
+    <button
+      kendoButton
+      themeColor="primary"
+      fillMode="outline"
+      (click)="onClick()"
+    >
+      Save Changes
+    </button>
   </form>
 </div>

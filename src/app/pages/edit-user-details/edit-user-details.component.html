@@ -19,6 +19,13 @@
     <label name="age">Age</label>
 
     <input type="number" name="age" [(ngModel)]="UserEditData.age" />
-    <button type="button" class="btn" (click)="onSave()">Save Chnages</button>
+    <button
+      kendoButton
+      themeColor="primary"
+      fillMode="outline"
+      (click)="onSave()"
+    >
+      Save Chnages
+    </button>
   </form>
 </div>

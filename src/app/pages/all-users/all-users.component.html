@@ -53,7 +53,12 @@
   </div> -->
 
   <div>
-    <kendo-grid [kendoGridBinding]="allUsers" [pageable]="true" [pageSize]="5">
+    <kendo-grid
+      [kendoGridBinding]="allUsers"
+      [pageable]="true"
+      [pageSize]="5"
+      [sortable]="true"
+    >
       <kendo-grid-column field="userName" title="User Name"></kendo-grid-column>
       <kendo-grid-column field="email" title="Email"></kendo-grid-column>
       <kendo-grid-column field="age" title="Age"></kendo-grid-column>

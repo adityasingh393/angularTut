@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { UserEditData } from '../../interfaces/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 
 @Component({
   selector: 'app-edit-user-details',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, KENDO_BUTTON],
   templateUrl: './edit-user-details.component.html',
   styleUrl: './edit-user-details.component.css',
 })

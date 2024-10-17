@@ -5,11 +5,12 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from '../../component/button/button.component';
 import localforage from 'localforage';
+import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, ButtonComponent],
+  imports: [FormsModule, ButtonComponent, KENDO_BUTTON],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })

@@ -6,12 +6,13 @@ import { Login } from '../../interfaces/auth';
 import { StringInputComponent } from '../../component/input-field/input-field.component';
 import { CommonModule } from '@angular/common';
 import localForage from 'localforage';
+import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 // import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, StringInputComponent, CommonModule],
+  imports: [FormsModule, StringInputComponent, CommonModule, KENDO_BUTTON],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })

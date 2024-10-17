@@ -36,12 +36,35 @@
 
     <input type="number" name="age" [(ngModel)]="registerData.age" />
 
-    <button type="button" class="btn" (click)="onRegister()">Register</button>
+    <button
+      kendoButton
+      themeColor="primary"
+      fillMode="solid"
+      class="btn"
+      (click)="onRegister()"
+    >
+      Register
+    </button>
   </form>
-  <button type="button" (click)="VerifyOtpButtonClick()" class="btn">Verify Email</button>
+  <button
+    kendoButton
+    themeColor="primary"
+    fillMode="solid"
+    class="btn"
+    (click)="VerifyOtpButtonClick()"
+  >
+    Verify Email
+  </button>
 
   <div class="subContainer">
     <p>If already registered please login</p>
-    <button type="button" class="btn" (click)="onClickLogin()">Login</button>
+    <button
+      kendoButton
+      themeColor="secondary"
+      fillMode="solid"
+      (click)="onClickLogin()"
+    >
+      Login
+    </button>
   </div>
 </div>
