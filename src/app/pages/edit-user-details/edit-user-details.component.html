@@ -23,9 +23,16 @@
       kendoButton
       themeColor="primary"
       fillMode="outline"
-      (click)="onSave()"
+      (click)="openDailogBox()"
     >
       Save Chnages
     </button>
   </form>
+  <div *ngIf="isDailogOpen">
+    <app-confirm-dailog
+      content="Are you sure you want to update the user details"
+      (confirm)="onSave()"
+      (cancel)="closeDailogBox()"
+    ></app-confirm-dailog>
+  </div>
 </div>

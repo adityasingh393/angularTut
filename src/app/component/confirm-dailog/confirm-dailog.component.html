@@ -1,0 +1,14 @@
+<kendo-dialog
+  title="Please confirm"
+  [minHeight]="100"
+  [minWidth]="200"
+  [height]="100"
+  (close)="onClickNo()"
+>
+  <!-- the (click) in line one is to make the dailog box closabel by clicking the cross button  -->
+  <p style="color: black; font-size: 16px">{{ content }}</p>
+  <kendo-dialog-actions>
+    <button kendoButton (click)="onClickNo()">No</button>
+    <button kendoButton (click)="onClickYes()" themeColor="primary">Yes</button>
+  </kendo-dialog-actions>
+</kendo-dialog>
