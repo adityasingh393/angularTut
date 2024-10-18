@@ -13,11 +13,7 @@
     <input name="w3review" [(ngModel)]="policyData.category" />
 
     <label name="content">Content</label>
-    <textarea
-      name="content"
-      [(ngModel)]="policyData.content"
-      rows="10"
-    ></textarea>
+    <kendo-editor [(value)]="policyData.content"></kendo-editor>
     <button
       kendoButton
       themeColor="primary"

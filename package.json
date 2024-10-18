@@ -29,6 +29,7 @@
     "@progress/kendo-angular-dateinputs": "16.11.0",
     "@progress/kendo-angular-dialog": "16.11.0",
     "@progress/kendo-angular-dropdowns": "16.11.0",
+    "@progress/kendo-angular-editor": "^16.11.0",
     "@progress/kendo-angular-excel-export": "16.11.0",
     "@progress/kendo-angular-grid": "^16.11.0",
     "@progress/kendo-angular-icons": "16.11.0",
@@ -58,7 +59,8 @@
     "primeng": "^17.18.11",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.10"
+    "zone.js": "~0.14.10",
+    "@progress/kendo-angular-toolbar": "16.11.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.2.6",

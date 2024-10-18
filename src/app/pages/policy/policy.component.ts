@@ -6,11 +6,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SidebarComponent } from '../../component/sidebar/sidebar.component';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 import { NotificationServices } from '../../services/notification.service';
+import { KENDO_EDITOR } from "@progress/kendo-angular-editor";
 
 @Component({
   selector: 'app-policy',
   standalone: true,
-  imports: [FormsModule, SidebarComponent, KENDO_BUTTON],
+  imports: [FormsModule, SidebarComponent, KENDO_BUTTON, KENDO_EDITOR],
   templateUrl: './policy.component.html',
   styleUrl: './policy.component.css',
 })
