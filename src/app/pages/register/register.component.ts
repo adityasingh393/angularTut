@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from '../../component/button/button.component';
 import localforage from 'localforage';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
+import { NotificationServices } from '../../services/notification.service';
 
 @Component({
   selector: 'app-register',
@@ -19,6 +20,7 @@ export class RegisterComponent {
   constructor(
     private http: HttpClient,
     private router: Router,
+    private notificationServices: NotificationServices,
   ) {
     this.registerData = {
       email: '',
@@ -39,8 +41,8 @@ export class RegisterComponent {
             'userSessionToken',
             res.authentication.sessionToken,
           );
-          alert('registration succesful');
-          localforage.removeItem("otpVerificationStatus")
+          this.notificationServices.show('success', 'Registration Successful');
+          localforage.removeItem('otpVerificationStatus');
           this.router.navigateByUrl('/home');
         } else {
           alert(res.message);

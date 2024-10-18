@@ -3,13 +3,14 @@ import { FormsModule } from '@angular/forms';
 import { policyData } from '../../interfaces/policy';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SidebarComponent } from "../../component/sidebar/sidebar.component";
+import { SidebarComponent } from '../../component/sidebar/sidebar.component';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
+import { NotificationServices } from '../../services/notification.service';
 
 @Component({
   selector: 'app-policy',
   standalone: true,
-  imports: [FormsModule, SidebarComponent,KENDO_BUTTON],
+  imports: [FormsModule, SidebarComponent, KENDO_BUTTON],
   templateUrl: './policy.component.html',
   styleUrl: './policy.component.css',
 })
@@ -20,6 +21,7 @@ export class PolicyComponent {
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
+    private notificationServices: NotificationServices,
   ) {
     this.policyData = {
       title: '',
@@ -60,7 +62,7 @@ export class PolicyComponent {
         { withCredentials: true },
       )
       .subscribe((res: any) => {
-        alert('your changes has been saved');
+        this.notificationServices.show('success', 'Policy update successful');
       });
   }
 }

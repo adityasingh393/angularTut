@@ -7,6 +7,7 @@ import { StringInputComponent } from '../../component/input-field/input-field.co
 import { CommonModule } from '@angular/common';
 import localForage from 'localforage';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
+import { NotificationServices } from '../../services/notification.service';
 // import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -21,6 +22,7 @@ export class LoginComponent {
   constructor(
     private http: HttpClient,
     private router: Router,
+    private notificationServices: NotificationServices,
   ) {
     this.loginData = {
       email: '',
@@ -34,7 +36,15 @@ export class LoginComponent {
       })
       .subscribe((res: any) => {
         localForage.setItem('role', res.role);
-        if (!res.result) {
+        if (res) {
+          console.log('sres', res);
+          console.log('res,result', res.result);
+          this.notificationServices.show(
+            'success',
+            'Logged In Successful',
+            'center',
+            'top',
+          );
           localForage.setItem('cookie', res.authentication.sessionToken);
           this.router.navigateByUrl('/home');
         } else {

@@ -40,36 +40,36 @@ export class DasboardComponent {
         console.log(this.usersData, 'saved users data ');
         this.updateChart('daily');
 
-        this.basicOptions = {
-          plugins: {
-            legend: {
-              labels: {
-                color: textColor,
-              },
-            },
-          },
-          scales: {
-            y: {
-              beginAtZero: true,
-              ticks: {
-                color: textColorSecondary,
-              },
-              grid: {
-                color: surfaceBorder,
-                drawBorder: false,
-              },
-            },
-            x: {
-              ticks: {
-                color: textColorSecondary,
-              },
-              grid: {
-                color: surfaceBorder,
-                drawBorder: false,
-              },
-            },
-          },
-        };
+        // this.basicOptions = {
+        //   plugins: {
+        //     legend: {
+        //       labels: {
+        //         color: textColor,
+        //       },
+        //     },
+        //   },
+        //   scales: {
+        //     y: {
+        //       beginAtZero: true,
+        //       ticks: {
+        //         color: textColorSecondary,
+        //       },
+        //       grid: {
+        //         color: surfaceBorder,
+        //         drawBorder: false,
+        //       },
+        //     },
+        //     x: {
+        //       ticks: {
+        //         color: textColorSecondary,
+        //       },
+        //       grid: {
+        //         color: surfaceBorder,
+        //         drawBorder: false,
+        //       },
+        //     },
+        //   },
+        // };
       });
   }
 
@@ -115,13 +115,13 @@ export class DasboardComponent {
           label: 'Users Registered',
           data: data,
           backgroundColor: [
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
             'rgba(54, 162, 235, 0.2)',
           ],
           borderColor: [
-            'rgb(255, 159, 64)',
-            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(54, 162, 235)',
             'rgb(54, 162, 235)',
           ],
           borderWidth: 1,

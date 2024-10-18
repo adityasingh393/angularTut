@@ -4,6 +4,7 @@ import { UserEditData } from '../../interfaces/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
+import { NotificationServices } from '../../services/notification.service';
 
 @Component({
   selector: 'app-edit-user-details',
@@ -19,6 +20,8 @@ export class EditUserDetailsComponent {
     private router: Router,
     private http: HttpClient,
     private route: ActivatedRoute,
+    // private notificationService: NotificationService,
+    private notificationService: NotificationServices,
   ) {
     this.UserEditData = {
       userName: '',
@@ -47,7 +50,7 @@ export class EditUserDetailsComponent {
     this.http
       .put('http://localhost:4000/user/updateUserById', this.UserEditData)
       .subscribe((res: any) => {
-        alert('your changes has been saved');
+        this.notificationService.show('success', 'changes has been saved');
       });
   }
 }
