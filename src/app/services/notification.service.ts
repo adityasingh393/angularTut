@@ -16,13 +16,17 @@ export class NotificationServices {
     this.notificationService.show({
       content: content,
       cssClass: 'button-notification',
+
       animation: { type: 'slide', duration: 400 },
       position: {
         horizontal: horizontalPosition || 'center',
         vertical: verticalPostion || 'top',
       },
-      type: { style: notificationType },
-      closable: true,
+      type: { style: notificationType, icon: false },
+      // closable: true,
+      hideAfter: 2000,
+      // height:32
+      // hideafter property is ignored is closbale is set to true
     });
   }
 }
