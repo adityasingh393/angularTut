@@ -9,7 +9,12 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-dasboard',
   standalone: true,
-  imports: [ChartModule, SidebarComponent, KENDO_DROPDOWNBUTTON,TranslateModule],
+  imports: [
+    ChartModule,
+    SidebarComponent,
+    KENDO_DROPDOWNBUTTON,
+    TranslateModule,
+  ],
   templateUrl: './dasboard.component.html',
   styleUrls: ['./dasboard.component.css'],
 })

@@ -11,12 +11,21 @@
       [pageSize]="5"
       [sortable]="true"
     >
-      <kendo-grid-column field="userName" title="User Name"></kendo-grid-column>
-      <kendo-grid-column field="email" title="Email"></kendo-grid-column>
-      <kendo-grid-column field="age" title="Age"></kendo-grid-column>
+      <kendo-grid-column
+        field="userName"
+        [title]="'kendo-grid.userName' | translate"
+      ></kendo-grid-column>
+      <kendo-grid-column
+        field="email"
+        [title]="'kendo-grid.email' | translate"
+      ></kendo-grid-column>
+      <kendo-grid-column
+        field="age"
+        [title]="'kendo-grid.age' | translate"
+      ></kendo-grid-column>
       <kendo-grid-column
         field="phoneNumber"
-        title="Phone Number"
+        [title]="'kendo-grid.phoneNumber' | translate"
       ></kendo-grid-column>
       <kendo-grid-column>
         <ng-template kendoGridCellTemplate let-dataItem>

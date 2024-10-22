@@ -11,6 +11,6 @@ export const optVerificationGuard: CanActivateFn = async (route, state) => {
     router.navigateByUrl('register');
     return false;
   } else {
-    return true;  
+    return true;
   }
 };

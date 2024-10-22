@@ -12,7 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, ButtonComponent, KENDO_BUTTON,TranslateModule],
+  imports: [FormsModule, ButtonComponent, KENDO_BUTTON, TranslateModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })

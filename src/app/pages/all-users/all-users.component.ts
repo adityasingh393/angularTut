@@ -22,7 +22,7 @@ import { TranslateModule } from '@ngx-translate/core';
     KENDO_BUTTON,
     MatPaginatorModule,
     SidebarComponent,
-    TranslateModule
+    TranslateModule,
   ],
   templateUrl: './all-users.component.html',
   styleUrls: ['./all-users.component.css'],

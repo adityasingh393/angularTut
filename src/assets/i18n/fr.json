@@ -26,7 +26,8 @@
     "phoneNumber": "Numéro de Téléphone",
     "age": "Âge",
     "saveChanges": "Sauvegarder les Modifications",
-    "contentForDailogBox": "Êtes-vous sûr de vouloir mettre à jour les détails de l'utilisateur ?"
+    "contentForDailogBox": "Êtes-vous sûr de vouloir mettre à jour les détails de l'utilisateur ?",
+    "confirmation-dailog": "Plfeaseef coformie"
   },
   "email-verification": {
     "send-otp": "Envoyer le OTP",
@@ -39,7 +40,7 @@
   },
   "home": {
     "welcome": "Bienvenue",
-    "email": "Email",
+    "email": "Courriel",
     "phoneNumber": "Numéro de Téléphone",
     "age": "Âge :",
     "edit-details": "Modifier les Détails",
@@ -47,7 +48,7 @@
     "logout": "Déconnexion"
   },
   "login-page": {
-    "email": "Email",
+    "email": "Courriel",
     "password": "Mot de Passe",
     "login": "Connexion",
     "register-description": "Si vous n'êtes pas inscrit, veuillez d'abord vous inscrire puis vous connecter.",
@@ -60,7 +61,7 @@
     "saveChanges": "Sauvegarder les Modifications"
   },
   "register-page": {
-    "email": "Email",
+    "email": "Courriel",
     "password": "Mot de Passe",
     "userName": "Nom d'utilisateur",
     "phoneNumber": "Numéro de Téléphone",
@@ -69,5 +70,11 @@
     "verify-email": "Vérifier l'Email",
     "login-description": "Si vous êtes déjà inscrit, veuillez vous connecter.",
     "login": "Connexion"
+  },
+  "kendo-grid": {
+    "userName": "Nom d'utilisateur",
+    "email": "Courriel",
+    "age": "Âge",
+    "phoneNumber": "Numéro de téléphone"
   }
 }

@@ -31,7 +31,7 @@
   </form>
   <div *ngIf="isDailogOpen">
     <app-confirm-dailog
-      content="edit-user-details.contentForDailogBox"
+      [content]="'edit-user-details.contentForDailogBox'|translate"
       (confirm)="onSave()"
       (cancel)="closeDailogBox()"
     ></app-confirm-dailog>

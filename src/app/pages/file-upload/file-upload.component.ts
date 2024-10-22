@@ -14,7 +14,7 @@ class ImageSnippet {
 @Component({
   selector: 'app-file-upload',
   standalone: true,
-  imports: [CommonModule, KENDO_BUTTON,TranslateModule],
+  imports: [CommonModule, KENDO_BUTTON, TranslateModule],
   templateUrl: './file-upload.component.html',
   styleUrl: './file-upload.component.css',
 })

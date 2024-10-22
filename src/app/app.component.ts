@@ -5,7 +5,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent,TranslateModule],
+  imports: [RouterOutlet, HeaderComponent, TranslateModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(private trnaslateService: TranslateService) {
     const userLang = navigator.language || 'en';
     const langCode = userLang.split('-')[0];
-    this.trnaslateService.setDefaultLang(langCode)
-    this.trnaslateService.use(langCode)
+    this.trnaslateService.setDefaultLang(langCode);
+    this.trnaslateService.use(langCode);
   }
 }

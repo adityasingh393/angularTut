@@ -14,7 +14,13 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, StringInputComponent, CommonModule, KENDO_BUTTON,TranslateModule],
+  imports: [
+    FormsModule,
+    StringInputComponent,
+    CommonModule,
+    KENDO_BUTTON,
+    TranslateModule,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })

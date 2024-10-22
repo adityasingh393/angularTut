@@ -13,7 +13,13 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-email-verification',
   standalone: true,
-  imports: [FormsModule, CommonModule, KENDO_BUTTON, ButtonComponent,TranslateModule],
+  imports: [
+    FormsModule,
+    CommonModule,
+    KENDO_BUTTON,
+    ButtonComponent,
+    TranslateModule,
+  ],
   templateUrl: './email-verification.component.html',
   styleUrl: './email-verification.component.css',
 })

@@ -8,9 +8,8 @@ describe('ConfirmDailogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ConfirmDailogComponent]
-    })
-    .compileComponents();
+      imports: [ConfirmDailogComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ConfirmDailogComponent);
     component = fixture.componentInstance;

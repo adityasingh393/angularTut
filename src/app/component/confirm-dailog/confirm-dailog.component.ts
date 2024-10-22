@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, input, Output } from '@angular/core';
 import { KENDO_DIALOGS } from '@progress/kendo-angular-dialog';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-confirm-dailog',
   standalone: true,
-  imports: [KENDO_BUTTON, KENDO_DIALOGS],
+  imports: [KENDO_BUTTON, KENDO_DIALOGS, TranslateModule],
   templateUrl: './confirm-dailog.component.html',
   styleUrl: './confirm-dailog.component.css',
 })
@@ -15,7 +16,7 @@ export class ConfirmDailogComponent {
 
   onClickNo() {
     this.cancel.emit();
-    console.log("cancel button from dailog cliked")
+    console.log('cancel button from dailog cliked');
   }
   onClickYes() {
     this.confirm.emit();

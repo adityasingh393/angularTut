@@ -26,7 +26,8 @@
     "phoneNumber": "Phone Number",
     "age": "Age",
     "saveChanges": "Save Changes",
-    "contentForDailogBox": "Are you sure you want to update the user details"
+    "contentForDailogBox": "Are you sure you want to update the user details",
+    "cofirmation-dailog":"Please Confirm"
   },
   "email-verification": {
     "send-otp": "Send OTP",
@@ -69,5 +70,11 @@
     "verify-email": "Verify Email",
     "login-description": "If already registerd please login",
     "login": "Login"
+  },
+  "kendo-grid": {
+    "userName": "Username",
+    "email": "Email",
+    "age": "Age",
+    "phoneNumber": "Phone Number"
   }
 }

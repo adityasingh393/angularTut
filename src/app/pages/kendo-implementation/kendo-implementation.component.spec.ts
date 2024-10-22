@@ -8,9 +8,8 @@ describe('KendoImplementationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KendoImplementationComponent]
-    })
-    .compileComponents();
+      imports: [KendoImplementationComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(KendoImplementationComponent);
     component = fixture.componentInstance;
