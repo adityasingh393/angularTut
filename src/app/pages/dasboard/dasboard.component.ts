@@ -4,11 +4,12 @@ import { ChartModule } from 'primeng/chart';
 import { SidebarComponent } from '../../component/sidebar/sidebar.component';
 import { KENDO_DROPDOWNBUTTON } from '@progress/kendo-angular-buttons';
 import { DropDownButtonForGraph } from '../../interfaces/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dasboard',
   standalone: true,
-  imports: [ChartModule, SidebarComponent, KENDO_DROPDOWNBUTTON],
+  imports: [ChartModule, SidebarComponent, KENDO_DROPDOWNBUTTON,TranslateModule],
   templateUrl: './dasboard.component.html',
   styleUrls: ['./dasboard.component.css'],
 })

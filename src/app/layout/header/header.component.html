@@ -1,8 +1,9 @@
 <div class="header-container row full-center">
   <nav class="nav-container">
-    <a *ngIf="!userLogged" href="login">Login</a>
-    <a *ngIf="userLogged && isAdmin" href="admin">Admin Portal</a>
-    <a href="upload-image">Upload-Image</a>
+    <a *ngIf="!userLogged" href="login">{{ "header.Login" | translate }}</a>
+    <a *ngIf="userLogged && isAdmin" href="admin">{{"header.admin_portal"|translate}}</a>
+    <a href="upload-image">{{ "header.upload-image" | translate }}</a>
+
 
     <div class="select-container" *ngIf="userLogged">
       <kendo-dropdownbutton

@@ -8,11 +8,12 @@ import { ButtonComponent } from '../../component/button/button.component';
 import localforage from 'localforage';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 import { NotificationServices } from '../../services/notification.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-email-verification',
   standalone: true,
-  imports: [FormsModule, CommonModule, KENDO_BUTTON, ButtonComponent],
+  imports: [FormsModule, CommonModule, KENDO_BUTTON, ButtonComponent,TranslateModule],
   templateUrl: './email-verification.component.html',
   styleUrl: './email-verification.component.css',
 })

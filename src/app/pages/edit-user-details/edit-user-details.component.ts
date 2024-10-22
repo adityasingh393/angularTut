@@ -7,11 +7,12 @@ import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 import { NotificationServices } from '../../services/notification.service';
 import { ConfirmDailogComponent } from '../../component/confirm-dailog/confirm-dailog.component';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-user-details',
   standalone: true,
-  imports: [FormsModule, KENDO_BUTTON, ConfirmDailogComponent, CommonModule],
+  imports: [FormsModule, KENDO_BUTTON, ConfirmDailogComponent, CommonModule,TranslateModule],
   templateUrl: './edit-user-details.component.html',
   styleUrl: './edit-user-details.component.css',
 })

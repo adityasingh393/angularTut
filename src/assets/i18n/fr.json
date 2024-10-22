@@ -1,0 +1,73 @@
+{
+  "dailogBox": {
+    "title": "Veuillez Confirmer",
+    "ButtonYes": "Oui",
+    "ButtonNo": "Non"
+  },
+  "header": {
+    "Login": "Connexion",
+    "admin_portal": "Portail Administrateur",
+    "upload-image": "Télécharger l'Image"
+  },
+  "sidebar": {
+    "dashboard": "Tableau de Bord",
+    "users": "Utilisateurs",
+    "privacy-policy": "Politique de Confidentialité"
+  },
+  "all-user-page": {
+    "all-users": "Tous les Utilisateurs",
+    "edit": "Modifier"
+  },
+  "dashboard": {
+    "range": "Plage"
+  },
+  "edit-user-details": {
+    "userName": "Nom d'utilisateur",
+    "phoneNumber": "Numéro de Téléphone",
+    "age": "Âge",
+    "saveChanges": "Sauvegarder les Modifications",
+    "contentForDailogBox": "Êtes-vous sûr de vouloir mettre à jour les détails de l'utilisateur ?"
+  },
+  "email-verification": {
+    "send-otp": "Envoyer le OTP",
+    "verify-otp": "Vérifier le OTP"
+  },
+  "image-upload": {
+    "upload": "Télécharger",
+    "visit-here": "Visitez Ici",
+    "loading": "Chargement...."
+  },
+  "home": {
+    "welcome": "Bienvenue",
+    "email": "Email",
+    "phoneNumber": "Numéro de Téléphone",
+    "age": "Âge :",
+    "edit-details": "Modifier les Détails",
+    "upload-image": "Télécharger l'Image",
+    "logout": "Déconnexion"
+  },
+  "login-page": {
+    "email": "Email",
+    "password": "Mot de Passe",
+    "login": "Connexion",
+    "register-description": "Si vous n'êtes pas inscrit, veuillez d'abord vous inscrire puis vous connecter.",
+    "register": "S'inscrire"
+  },
+  "policy-page": {
+    "title": "Titre",
+    "category": "Catégorie",
+    "content": "Contenu",
+    "saveChanges": "Sauvegarder les Modifications"
+  },
+  "register-page": {
+    "email": "Email",
+    "password": "Mot de Passe",
+    "userName": "Nom d'utilisateur",
+    "phoneNumber": "Numéro de Téléphone",
+    "age": "Âge",
+    "register": "S'inscrire",
+    "verify-email": "Vérifier l'Email",
+    "login-description": "Si vous êtes déjà inscrit, veuillez vous connecter.",
+    "login": "Connexion"
+  }
+}

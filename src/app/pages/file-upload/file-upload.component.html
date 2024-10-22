@@ -7,13 +7,13 @@
     themeColor="primary"
     fillMode="outline"
   >
-    Upload
+    {{ "image-upload.upload" | translate }}
   </button>
   <div class="container" *ngIf="shortLink">
-    <h2>Visit Here</h2>
+    <h2>{{ "image-upload.visit-here" | translate }}</h2>
     <a target="_blank" href="{{ shortLink }}">{{ shortLink }}</a>
   </div>
   <div class="container" *ngIf="loading">
-    <h3>Loading ...</h3>
+    <h3>{{ "image-upload.loading" | translate }}</h3>
   </div>
 </div>

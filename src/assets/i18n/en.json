@@ -1,0 +1,73 @@
+{
+  "dailogBox": {
+    "title": "Please Confirm",
+    "ButtonYes": "Yes",
+    "ButtonNo": "No"
+  },
+  "header": {
+    "Login": "Login",
+    "admin_portal": "Admin Portal",
+    "upload-image": "Upload Image"
+  },
+  "sidebar": {
+    "dashBoard": "Dashboard",
+    "users": "Users",
+    "privacy-policy": "Privacy Policy"
+  },
+  "all-user-page": {
+    "all-users": "All Users",
+    "edit": "Edit"
+  },
+  "dashboard": {
+    "range": "Range"
+  },
+  "edit-user-details": {
+    "userName": "Username",
+    "phoneNumber": "Phone Number",
+    "age": "Age",
+    "saveChanges": "Save Changes",
+    "contentForDailogBox": "Are you sure you want to update the user details"
+  },
+  "email-verification": {
+    "send-otp": "Send OTP",
+    "verify-otp": "Verify OTP"
+  },
+  "image-upload": {
+    "upload": "Upload",
+    "visit-here": "Visit Here",
+    "loading": "Loading...."
+  },
+  "home": {
+    "welcome": "Welcome",
+    "email": "Email",
+    "phoneNumber": "Phone Number",
+    "age": "Age:",
+    "edit-details": "Edit Details",
+    "upload-image": "Upload Image",
+    "logout": "Logout"
+  },
+  "login-page": {
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "register-description": "If not registerd kindly first register then login",
+    "register": "Register"
+  },
+  "policy-page": {
+    "title": "Title",
+    "category": "Category",
+    "content": "Content",
+    "saveChanges": "Save Changes"
+  },
+  "register-page": {
+    "email": "Email",
+    "password": "Password",
+    "userName": "Username",
+    "phoneNumber": "Phone Number",
+    "age": "Age",
+    "register": "Register",
+    "verify-email": "Verify Email",
+    "login-description": "If already registerd please login",
+    "login": "Login"
+  }
+}

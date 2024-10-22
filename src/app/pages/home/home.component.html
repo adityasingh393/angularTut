@@ -1,9 +1,9 @@
 <div class="main-container">
-  <h2>Welcome, {{ userInfo.userName }}!</h2>
+  <h2>{{ "home.welcome" | translate }} {{ userInfo.userName }}!</h2>
   <div class="user-details">
-    <p>Email: {{ userInfo.email }}</p>
-    <p>Phone Number: {{ userInfo.phoneNumber }}</p>
-    <p>Age: {{ userInfo.age }}</p>
+    <p>{{ "home.email" | translate }}: {{ userInfo.email }}</p>
+    <p>{{ "home.phoneNumber" | translate }} : {{ userInfo.phoneNumber }}</p>
+    <p>{{ "home.age" | translate }}: {{ userInfo.age }}</p>
   </div>
   <div class="btn-container">
     <button
@@ -12,7 +12,7 @@
       themeColor="primary"
       fillMode="outline"
     >
-      Edit details
+      {{ "home.edit-details" | translate }}
     </button>
     <button
       kendoButton
@@ -20,7 +20,7 @@
       fillMode="outline"
       (click)="onUploadClick()"
     >
-      Upload Image
+      {{ "home.upload-image" | translate }}
     </button>
     <button
       (click)="onLogOut()"
@@ -28,7 +28,7 @@
       themeColor="primary"
       fillMode="outline"
     >
-      Logout
+      {{ "home.logout" | translate }}
     </button>
   </div>
 </div>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ImageUploadService } from '../../services/image-upload.service';
 import { CommonModule } from '@angular/common';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
+import { TranslateModule } from '@ngx-translate/core';
 class ImageSnippet {
   constructor(
     public src: string,
@@ -13,7 +14,7 @@ class ImageSnippet {
 @Component({
   selector: 'app-file-upload',
   standalone: true,
-  imports: [CommonModule, KENDO_BUTTON],
+  imports: [CommonModule, KENDO_BUTTON,TranslateModule],
   templateUrl: './file-upload.component.html',
   styleUrl: './file-upload.component.css',
 })

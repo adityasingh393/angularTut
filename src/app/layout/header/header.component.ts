@@ -8,10 +8,11 @@ import { Router } from '@angular/router';
 import { KENDO_DROPDOWNBUTTON } from '@progress/kendo-angular-buttons';
 import { DropDownButtonListType } from '../../interfaces/common';
 import { SVGIcon, userIcon } from '@progress/kendo-svg-icons';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MatIconModule, KENDO_DROPDOWNBUTTON],
+  imports: [CommonModule, MatIconModule, KENDO_DROPDOWNBUTTON, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })

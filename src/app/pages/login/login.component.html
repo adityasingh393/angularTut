@@ -1,13 +1,13 @@
 <div class="main-container">
   <form action="#">
-    <label name="email">Email</label>
+    <label name="email">{{ "login-page.email" | translate }}</label>
     <input
       type="email"
       placeholder="Enter your email"
       [(ngModel)]="loginData.email"
       name="email"
     />
-    <label name="password">Password</label>
+    <label name="password">{{ "login-page.password" | translate }}</label>
     <input
       type="password"
       placeholder="Enter your password"
@@ -21,11 +21,11 @@
       class="btn"
       (click)="onLogin()"
     >
-      Login
+      {{ "login-page.login" | translate }}
     </button>
   </form>
   <div class="subContainer">
-    <p>If not register kindly first register then login</p>
+    <p>{{ "login-page.register-description" }}</p>
     <button
       kendoButton
       themeColor="primary"
@@ -33,7 +33,7 @@
       class="btn"
       (click)="onClickRegister()"
     >
-      Register
+      {{ "login-page.register" | translate }}
     </button>
   </div>
 </div>

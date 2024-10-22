@@ -1,7 +1,7 @@
 <div class="main-container">
   <app-sidebar></app-sidebar>
   <form action="#">
-    <label name="title">Title</label>
+    <label name="title">{{ "policy-page.title" | translate }}</label>
     <input
       type="text"
       name="title"
@@ -9,10 +9,10 @@
       [(ngModel)]="policyData.title"
     />
 
-    <label name="category">Category </label>
+    <label name="category">{{ "policy-page.category" | translate }} </label>
     <input name="w3review" [(ngModel)]="policyData.category" />
 
-    <label name="content">Content</label>
+    <label name="content">{{ "policy-page.content" | translate }}</label>
     <kendo-editor [(value)]="policyData.content"></kendo-editor>
     <button
       kendoButton
@@ -20,7 +20,7 @@
       fillMode="outline"
       (click)="onClick()"
     >
-      Save Changes
+      {{ "policy-page.saveChanges" | translate }}
     </button>
   </form>
 </div>

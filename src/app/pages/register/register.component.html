@@ -1,6 +1,6 @@
 <div class="main-container">
   <form action="#">
-    <label name="email">Email</label>
+    <label name="email">{{ "register-page.email" | translate }}</label>
     <input
       type="email"
       placeholder="Enter your email"
@@ -8,7 +8,7 @@
       name="email"
     />
 
-    <label name="password">Password</label>
+    <label name="password">{{ "register-page.password" | translate }}</label>
     <input
       type="password"
       name="password"
@@ -16,7 +16,7 @@
       [(ngModel)]="registerData.password"
     />
 
-    <label name="name">UserName</label>
+    <label name="name">{{ "register-page.userName" | translate }}</label>
     <input
       type="text"
       name="userName"
@@ -24,7 +24,9 @@
       [(ngModel)]="registerData.userName"
     />
 
-    <label name="phoneNumber">Phone Number</label>
+    <label name="phoneNumber">{{
+      "register-page.phoneNumber" | translate
+    }}</label>
     <input
       type="text"
       name="phoneNumber"
@@ -32,7 +34,7 @@
       [(ngModel)]="registerData.phoneNumber"
     />
 
-    <label name="age">Age</label>
+    <label name="age">{{ "register-page.age" | translate }}</label>
 
     <input type="number" name="age" [(ngModel)]="registerData.age" />
 
@@ -43,7 +45,7 @@
       class="btn"
       (click)="onRegister()"
     >
-      Register
+      {{ "register-page.register" | translate }}
     </button>
   </form>
   <button
@@ -53,18 +55,18 @@
     class="btn"
     (click)="VerifyOtpButtonClick()"
   >
-    Verify Email
+    {{ "register-page.verify-email" | translate }}
   </button>
 
   <div class="subContainer">
-    <p>If already registered please login</p>
+    <p>{{ "register-page.login-description" | translate }}</p>
     <button
       kendoButton
       themeColor="secondary"
       fillMode="solid"
       (click)="onClickLogin()"
     >
-      Login
+      {{ "register-page.login" | translate }}
     </button>
   </div>
 </div>

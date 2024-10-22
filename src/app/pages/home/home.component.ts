@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import localforage from 'localforage';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, KENDO_BUTTON],
+  imports: [CommonModule, KENDO_BUTTON, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

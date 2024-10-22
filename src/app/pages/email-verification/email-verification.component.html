@@ -17,7 +17,7 @@
         class="btn"
         (click)="sendOtpButton()"
       >
-        send otp
+        {{ "email-verification.send-otp" | translate }}
       </button>
     </div>
 
@@ -34,7 +34,7 @@
       fillMode="solid"
       (click)="verifyOtpButton()"
     >
-      verify otp
+      {{ "email-verification.verify-otp" | translate }}
     </button>
   </form>
   <!-- <div *ngIf="emailVerification">you entered the wrong otp</div> -->

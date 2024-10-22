@@ -18,6 +18,7 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    title: 'Login page', //to add title in the browser tab
     canActivate: [loginGuardGuard],
   },
   {

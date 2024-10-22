@@ -16,7 +16,6 @@ export class NotificationServices {
     this.notificationService.show({
       content: content,
       cssClass: 'button-notification',
-
       animation: { type: 'slide', duration: 400 },
       position: {
         horizontal: horizontalPosition || 'center',

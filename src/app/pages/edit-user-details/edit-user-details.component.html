@@ -1,13 +1,15 @@
 <div class="main-container">
   <form action="#">
-    <label name="name">UserName</label>
+    <label name="name">{{ "edit-user-details.userName" | translate }}</label>
     <input
       type="text"
       name="userName"
       placeholder="Enter your username"
       [(ngModel)]="UserEditData.userName"
     />
-    <label name="phoneNumber">Phone Number</label>
+    <label name="phoneNumber">{{
+      "edit-user-details.phoneNumber" | translate
+    }}</label>
     <input
       type="text"
       name="phoneNumber"
@@ -15,7 +17,7 @@
       [(ngModel)]="UserEditData.phoneNumber"
     />
 
-    <label name="age">Age</label>
+    <label name="age">{{ "edit-user-details.age" | translate }}</label>
 
     <input type="number" name="age" [(ngModel)]="UserEditData.age" />
     <button
@@ -24,12 +26,12 @@
       fillMode="outline"
       (click)="openDailogBox()"
     >
-      Save Chnages
+      {{ "edit-user-details.saveChanges" | translate }}
     </button>
   </form>
   <div *ngIf="isDailogOpen">
     <app-confirm-dailog
-      content="Are you sure you want to update the user details"
+      content="edit-user-details.contentForDailogBox"
       (confirm)="onSave()"
       (cancel)="closeDailogBox()"
     ></app-confirm-dailog>

@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from '../../component/sidebar/sidebar.component';
 import { KENDO_GRID } from '@progress/kendo-angular-grid';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-all-users',
   standalone: true,
@@ -21,6 +22,7 @@ import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
     KENDO_BUTTON,
     MatPaginatorModule,
     SidebarComponent,
+    TranslateModule
   ],
   templateUrl: './all-users.component.html',
   styleUrls: ['./all-users.component.css'],

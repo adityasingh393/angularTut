@@ -23,6 +23,8 @@
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@ngx-env/builder": "^18.0.2",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
     "@progress/kendo-angular-buttons": "16.11.0",
     "@progress/kendo-angular-charts": "^16.11.0",
     "@progress/kendo-angular-common": "16.11.0",
@@ -43,6 +45,7 @@
     "@progress/kendo-angular-pdf-export": "16.11.0",
     "@progress/kendo-angular-popup": "16.11.0",
     "@progress/kendo-angular-progressbar": "16.11.0",
+    "@progress/kendo-angular-toolbar": "16.11.0",
     "@progress/kendo-angular-treeview": "16.11.0",
     "@progress/kendo-angular-utils": "16.11.0",
     "@progress/kendo-data-query": "^1.0.0",
@@ -59,8 +62,7 @@
     "primeng": "^17.18.11",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.10",
-    "@progress/kendo-angular-toolbar": "16.11.0"
+    "zone.js": "~0.14.10"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.2.6",

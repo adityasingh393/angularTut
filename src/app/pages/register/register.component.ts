@@ -7,11 +7,12 @@ import { ButtonComponent } from '../../component/button/button.component';
 import localforage from 'localforage';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 import { NotificationServices } from '../../services/notification.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, ButtonComponent, KENDO_BUTTON],
+  imports: [FormsModule, ButtonComponent, KENDO_BUTTON,TranslateModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })

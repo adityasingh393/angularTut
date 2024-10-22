@@ -8,12 +8,13 @@ import { CommonModule } from '@angular/common';
 import localForage from 'localforage';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 import { NotificationServices } from '../../services/notification.service';
+import { TranslateModule } from '@ngx-translate/core';
 // import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, StringInputComponent, CommonModule, KENDO_BUTTON],
+  imports: [FormsModule, StringInputComponent, CommonModule, KENDO_BUTTON,TranslateModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
