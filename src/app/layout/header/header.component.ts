@@ -7,8 +7,9 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { KENDO_DROPDOWNBUTTON } from '@progress/kendo-angular-buttons';
 import { DropDownButtonListType } from '../../interfaces/common';
-import { SVGIcon, userIcon } from '@progress/kendo-svg-icons';
+import { SVGIcon, userIcon, globeIcon } from '@progress/kendo-svg-icons';
 import { TranslateModule } from '@ngx-translate/core';
+import { TranslationService } from '../../services/translation.service';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -20,11 +21,17 @@ export class HeaderComponent implements OnInit {
   userLogged: boolean = false;
   isAdmin: boolean = false;
   profileIcon: SVGIcon = userIcon;
+  languageIcon: SVGIcon = globeIcon;
   dropDownButtonList: DropDownButtonListType[] = [
     { title: 'My Profile' }, // Use curly braces for object literals
     { title: 'Log Out' },
   ];
-  constructor(private router: Router) {}
+
+  languages: string[] = ['en', 'fr'];
+  constructor(
+    private router: Router,
+    private translationService: TranslationService,
+  ) {}
   async ngOnInit() {
     try {
       const cookie = await localforage.getItem('cookie');
@@ -45,5 +52,9 @@ export class HeaderComponent implements OnInit {
     if (option.title === 'My Profile') {
       this.router.navigateByUrl('home');
     }
+  }
+  onChangeLanguage(option: string) {
+    console.log(option)
+    this.translationService.changeLang(option);
   }
 }

@@ -1,10 +1,20 @@
 <div class="header-container row full-center">
   <nav class="nav-container">
     <a *ngIf="!userLogged" href="login">{{ "header.Login" | translate }}</a>
-    <a *ngIf="userLogged && isAdmin" href="admin">{{"header.admin_portal"|translate}}</a>
+    <a *ngIf="userLogged && isAdmin" href="admin">{{
+      "header.admin_portal" | translate
+    }}</a>
     <a href="upload-image">{{ "header.upload-image" | translate }}</a>
 
-
+    <kendo-dropdownbutton
+      [data]="languages"
+      themeColor="secondary"
+      fillMode="flat"
+      [svgIcon]="languageIcon"
+      (itemClick)="onChangeLanguage($event)"
+    >
+      <!-- i dont think [textField="'title'"] is needed but it was not working wihtout this (solved)-->
+    </kendo-dropdownbutton>
     <div class="select-container" *ngIf="userLogged">
       <kendo-dropdownbutton
         [data]="dropDownButtonList"
