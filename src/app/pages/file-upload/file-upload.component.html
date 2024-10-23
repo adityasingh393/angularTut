@@ -11,7 +11,7 @@
   </button>
   <div class="container" *ngIf="shortLink">
     <h2>{{ "image-upload.visit-here" | translate }}</h2>
-    <a target="_blank" href="{{ shortLink }}">{{ shortLink }}</a>
+    <a target="_blank" href="{{ shortLink }}">{{ shortLink|turncate}}</a>
   </div>
   <div class="container" *ngIf="loading">
     <h3>{{ "image-upload.loading" | translate }}</h3>

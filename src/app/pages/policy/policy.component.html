@@ -13,7 +13,11 @@
     <input name="w3review" [(ngModel)]="policyData.category" />
 
     <label name="content">{{ "policy-page.content" | translate }}</label>
-    <kendo-editor [(value)]="policyData.content"></kendo-editor>
+    <kendo-editor
+      [(value)]="policyData.content"
+      (ngModelChange)="(policyData.content)"
+    ></kendo-editor>
+    <!-- its lil bit tricky to add add pipe in two way binding data  -->
     <button
       kendoButton
       themeColor="primary"

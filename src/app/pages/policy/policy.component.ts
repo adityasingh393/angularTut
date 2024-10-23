@@ -8,6 +8,7 @@ import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 import { NotificationServices } from '../../services/notification.service';
 import { KENDO_EDITOR } from '@progress/kendo-angular-editor';
 import { TranslateModule } from '@ngx-translate/core';
+import { TurncatePipe } from '../../pipes/turncate.pipe';
 
 @Component({
   selector: 'app-policy',
@@ -18,6 +19,7 @@ import { TranslateModule } from '@ngx-translate/core';
     KENDO_BUTTON,
     KENDO_EDITOR,
     TranslateModule,
+    TurncatePipe
   ],
   templateUrl: './policy.component.html',
   styleUrl: './policy.component.css',
