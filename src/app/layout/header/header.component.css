@@ -23,6 +23,8 @@
 .select-container {
   position: relative;
   margin-left: auto;
+  /* margin: 40px; */
+  display: flex;
 }
 
 .user-icon {

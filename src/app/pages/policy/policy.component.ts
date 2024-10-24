@@ -19,7 +19,7 @@ import { TurncatePipe } from '../../pipes/turncate.pipe';
     KENDO_BUTTON,
     KENDO_EDITOR,
     TranslateModule,
-    TurncatePipe
+    TurncatePipe,
   ],
   templateUrl: './policy.component.html',
   styleUrl: './policy.component.css',

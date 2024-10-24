@@ -8,26 +8,28 @@
     }}</a>
     <a href="upload-image">{{ "header.upload-image" | translate }}</a>
 
-    <kendo-dropdownbutton
-      [data]="languages"
-      themeColor="secondary"
-      fillMode="flat"
-      [svgIcon]="languageIcon"
-      (itemClick)="onChangeLanguage($event)"
-    >
-      <!-- i dont think [textField="'title'"] is needed but it was not working wihtout this (solved)-->
-    </kendo-dropdownbutton>
-    <div class="select-container" *ngIf="authService.userLogged()">
+    <div class="select-container">
       <kendo-dropdownbutton
-        [data]="dropDownButtonList"
-        [textField]="'title'"
-        [svgIcon]="profileIcon"
+        [data]="languages"
         themeColor="secondary"
         fillMode="flat"
-        (itemClick)="onChangeOption($event)"
+        [svgIcon]="languageIcon"
+        (itemClick)="onChangeLanguage($event)"
       >
         <!-- i dont think [textField="'title'"] is needed but it was not working wihtout this (solved)-->
       </kendo-dropdownbutton>
+      <div *ngIf="authService.userLogged()">
+        <kendo-dropdownbutton
+          [data]="dropDownButtonList"
+          [textField]="'title'"
+          [svgIcon]="profileIcon"
+          themeColor="secondary"
+          fillMode="flat"
+          (itemClick)="onChangeOption($event)"
+        >
+          <!-- i dont think [textField="'title'"] is needed but it was not working wihtout this (solved)-->
+        </kendo-dropdownbutton>
+      </div>
     </div>
   </nav>
 </div>

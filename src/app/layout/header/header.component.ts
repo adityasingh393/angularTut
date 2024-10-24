@@ -25,12 +25,11 @@ import { AuthService } from '../../services/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
-
   // userLogged: boolean = false;
   // isAdmin: boolean = false;
   // we donot need the above varibale because we sare using signals now to update the header and its content
-  // based on the fact that if user is loggged in or not 
-  
+  // based on the fact that if user is loggged in or not
+
   profileIcon: SVGIcon = userIcon;
   languageIcon: SVGIcon = globeIcon;
   dropDownButtonList: DropDownButtonListType[] = [
@@ -43,7 +42,7 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private translationService: TranslationService,
     private changeDetector: ChangeDetectorRef,
-    public authService:AuthService
+    public authService: AuthService,
   ) {}
   async ngOnInit() {
     // this.headerUpdate();

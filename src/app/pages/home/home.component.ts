@@ -19,7 +19,7 @@ export class HomeComponent {
   constructor(
     private router: Router,
     private http: HttpClient,
-    private authService:AuthService
+    private authService: AuthService,
   ) {}
   userInfo: UserInfo = {
     _id: '',
@@ -40,7 +40,7 @@ export class HomeComponent {
   }
   onLogOut() {
     this.router.navigateByUrl('/login');
-   this.authService.logoutUser()
+    this.authService.logoutUser();
   }
   editdata(id: string) {
     this.router.navigateByUrl(`/edit-user-details/${id}`);

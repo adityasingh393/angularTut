@@ -1,5 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Login } from '../../interfaces/auth';
@@ -33,7 +37,7 @@ export class LoginComponent {
     private router: Router,
     private notificationServices: NotificationServices,
     // private changeDetector:ChangeDetectorRef
-    private authService:AuthService
+    private authService: AuthService,
   ) {
     this.loginData = {
       email: '',
