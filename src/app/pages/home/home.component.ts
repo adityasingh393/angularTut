@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import localforage from 'localforage';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 import { TranslateModule } from '@ngx-translate/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ export class HomeComponent {
   constructor(
     private router: Router,
     private http: HttpClient,
+    private authService:AuthService
   ) {}
   userInfo: UserInfo = {
     _id: '',
@@ -38,8 +40,7 @@ export class HomeComponent {
   }
   onLogOut() {
     this.router.navigateByUrl('/login');
-    localforage.removeItem('cookie');
-    localforage.removeItem('role');
+   this.authService.logoutUser()
   }
   editdata(id: string) {
     this.router.navigateByUrl(`/edit-user-details/${id}`);

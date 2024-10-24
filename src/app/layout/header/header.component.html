@@ -1,7 +1,9 @@
 <div class="header-container row full-center">
   <nav class="nav-container">
-    <a *ngIf="!userLogged" href="login">{{ "header.Login" | translate }}</a>
-    <a *ngIf="userLogged && isAdmin" href="admin">{{
+    <a *ngIf="!authService.userLogged()" href="login">{{
+      "header.Login" | translate
+    }}</a>
+    <a *ngIf="authService.userLogged() && authService.isAdmin()" href="admin">{{
       "header.admin_portal" | translate
     }}</a>
     <a href="upload-image">{{ "header.upload-image" | translate }}</a>
@@ -15,7 +17,7 @@
     >
       <!-- i dont think [textField="'title'"] is needed but it was not working wihtout this (solved)-->
     </kendo-dropdownbutton>
-    <div class="select-container" *ngIf="userLogged">
+    <div class="select-container" *ngIf="authService.userLogged()">
       <kendo-dropdownbutton
         [data]="dropDownButtonList"
         [textField]="'title'"
