@@ -1,10 +1,9 @@
 .wrapper {
-  height: auto;
-  padding: 20px;
-  /* width: auto; */
-  width: 100%;
+  /* /* height: auto; */
+  width: auto;
   display: flex;
+  padding: 10px;
   align-items: center;
-  justify-self: center;
+  justify-content: center;
   box-sizing: border-box;
 }

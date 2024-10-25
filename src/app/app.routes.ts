@@ -18,7 +18,7 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    title: 'Login page', //to add title in the browser tab
+    // title: 'Login page', //to add title in the browser tab
     canActivate: [loginGuardGuard],
   },
   {
@@ -28,6 +28,7 @@ export const routes: Routes = [
   },
   {
     path: 'home',
+    // title:'hOM',
     component: HomeComponent,
     canActivate: [authGuard],
   },
