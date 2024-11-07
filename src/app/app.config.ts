@@ -7,7 +7,9 @@ import { GridModule } from '@progress/kendo-angular-grid';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { importProvidersFrom } from '@angular/core';
-
+import { provideStore } from '@ngrx/store';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { taskReducer } from './store/task.reducer';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
 }
@@ -28,5 +30,7 @@ export const appConfig: ApplicationConfig = {
         },
       }),
     ),
+    provideStore({ tasks: taskReducer }),
+    provideStoreDevtools({ maxAge: 25, logOnly: false }),
   ],
 };

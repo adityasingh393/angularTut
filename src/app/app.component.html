@@ -1,4 +1,10 @@
-<app-header></app-header>
-<div class="wrapper">
-  <router-outlet />
+<div class="wrappper">
+  <div *ngFor="let task of tasks" class="task">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <button (click)="updateTask(task)">Update</button>
+    <button (click)="deleteTask(task.id)">Delete</button>
+  </div>
+  <button (click)="addNewTask()">Add New Task</button>
+  <!-- <router-outlet></router-outlet> -->
 </div>
