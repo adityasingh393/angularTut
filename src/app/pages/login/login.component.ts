@@ -1,9 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-} from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Login } from '../../interfaces/auth';
@@ -16,12 +12,18 @@ import { TranslateModule } from '@ngx-translate/core';
 import localforage from 'localforage';
 import { AuthService } from '../../services/auth.service';
 // import { HttpClientModule } from '@angular/common/http';
-
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     StringInputComponent,
     CommonModule,
     KENDO_BUTTON,
@@ -31,22 +33,28 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  loginData: Login;
+  // loginData: Login;
+  loginForm!: FormGroup;
   constructor(
     private http: HttpClient,
     private router: Router,
     private notificationServices: NotificationServices,
-    // private changeDetector:ChangeDetectorRef
+    private fb: FormBuilder,
     private authService: AuthService,
-  ) {
-    this.loginData = {
-      email: '',
-      password: '',
-    };
+  ) {}
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
   }
   onLogin() {
+    if (this.loginForm.invalid) {
+      this.loginForm.markAllAsTouched();
+      return;
+    }
     this.http
-      .post('http://localhost:4000/auth/login', this.loginData, {
+      .post('http://localhost:4000/auth/login', this.loginForm.value, {
         withCredentials: true,
       })
       .subscribe((res: any) => {

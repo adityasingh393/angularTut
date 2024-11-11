@@ -1,5 +1,5 @@
-import { Component, NgModule } from '@angular/core';
-import { Register } from '../../interfaces/auth';
+import { Component, NgModule, OnInit } from '@angular/core';
+// import { Register } from '../../interfaces/auth';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -8,32 +8,57 @@ import localforage from 'localforage';
 import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 import { NotificationServices } from '../../services/notification.service';
 import { TranslateModule } from '@ngx-translate/core';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, ButtonComponent, KENDO_BUTTON, TranslateModule],
+  imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    ButtonComponent,
+    CommonModule,
+    KENDO_BUTTON,
+    TranslateModule,
+  ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
-export class RegisterComponent {
-  registerData: Register;
+export class RegisterComponent implements OnInit {
+  // registerData: Register;
+  registerForm!: FormGroup;
   constructor(
     private http: HttpClient,
     private router: Router,
     private notificationServices: NotificationServices,
-  ) {
-    this.registerData = {
-      email: '',
-      userName: '',
-      password: '',
-      age: 18,
-      phoneNumber: '',
-    };
+    private fb: FormBuilder,
+  ) {}
+  ngOnInit() {
+    this.registerForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      userName: ['', [Validators.required, Validators.minLength(3)]],
+      phoneNumber: [
+        '',
+        [Validators.required, Validators.pattern('^[0-9]{10}$')],
+      ],
+      age: [18, [Validators.required, Validators.min(18)]],
+    });
   }
+
   onRegister() {
+    if (this.registerForm.invalid) {
+      this.registerForm.markAllAsTouched();
+      return;
+    }
     this.http
-      .post('http://localhost:4000/auth/register', this.registerData, {
+      .post('http://localhost:4000/auth/register', this.registerForm.value, {
         withCredentials: true,
       })
       .subscribe((res: any) => {
